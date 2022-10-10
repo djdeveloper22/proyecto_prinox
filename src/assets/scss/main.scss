@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montaga&display=swap");
+@import './card';
+@import './estilosGenerales.scss';
+@import './slide.scss';
+@import './efecto-rebote.scss';
+@import './efecto-radar.scss';
+@import './estilos-btn.scss';
+@import './efecto-hover-_keyframe.scss';
+@import './mediaquery.scss';
+
+//header
+.container__logo{
+  margin: 0 1rem;
+}
+
+.bg-fondo-slide {
+  background-color: #2321219e;
+}
+
+.estilo-p {
+  clip-path: polygon(8% 0, 100% 0%, 91% 97%, 0% 100%);
+  color: white;
+  background-color: #ee1f28;
+  width: 16rem;
+  display: inline-block;
+  text-align: center;
+  &.estilo--p {
+    background-color: #2dcca7 !important;
+  }
+  &.estilo--redes{
+    background-color: #0C3E8B;
+    display: flex;
+    padding: 0.2rem;
+    
+    
+  }
+}
+
+//estilo del titulo
+.estilo-title {
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: 600;
+  &.title--producer {
+    color: #000;
+  }
+}
+
+.title-parrafo {
+  color: #fff;
+  &.parrafo--producer {
+    color: rgb(124, 121, 121);
+  }
+}
+
+
+
+//contenedor info redes
+.container-redes {
+  writing-mode: vertical-rl;
+  flex: 0;
+  justify-content: space-around;
+}
+
+.container-redes .row {
+  flex: 1;
+}
+
+//contenedor cuerpo
+
+.contenido-informacion p {
+  color: rgb(124, 121, 121);
+  font-size: 17px;
+  line-height: 200%;
+}
+
+.bi--informacion {
+  font-size: 40px;
+  color: #fc6b5e;
+}
+
+.container-bi-clipboard2-check {
+  background-color: #fc6b5e;
+  border-radius: 0.4rem;
+  width: 3rem;
+  height: 2.6rem;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+//-------------
+
+//seccion producer
+.poligon {
+  background-color: #ee1f28;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.estilo-border {
+  border: 1px solid #ccc;
+  border-radius: 10rem;
+  margin: 0 auto;
+}
+
+.separador {
+  background-color: #000;
+  height: 0.2rem;
+  border-radius: 0.4rem;
+
+  &.separador-footer {
+    background-color: #ccc;
+  }
+}
+
+.bi--icon-play {
+  background-color: rgb(244, 237, 237);
+  font-size: 3.8rem;
+
+  &.bi--icon-play--header{
+    font-size: 3.8rem;
+    color: #fff;
+    background-color: #ffffff00;
+  }
+
+  &.bi--icon-play-2 {
+    background-color: #fff;
+    font-size: 5rem;
+  }
+
+  &.bi--icon-play--address{
+    color:#000;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &.bi--icon-play-2{
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.bi--estilo-circle {
+  color: rgb(100, 218, 255);
+}
+
+//seccion quality
+.text-color {
+  color: #df8a5d;
+}
+
+.efecto-reflejo::after {
+  content: "Design. Printing. Quality";
+  font-size: 5rem;
+  color: #ccc;
+}
+
+.estilo-quality {
+  font-size: 4rem;
+  font-family: "Montaga", serif;
+}
+//service
+.estilos-texto-service {
+  background-color: #fff;
+  width: 12rem;
+  height: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bg--hover {
+  background-color: rgb(232, 226, 226);
+  transition: all 200ms ease-in;
+  margin-left: 0.4rem;
+}
+
+
+
+.container-icons-start {
+  color: #ee1f28;
+  font-size: 1.6rem;
+}
+
+//figure
+.container--figure {
+  display: grid;
+  place-content: center;
+}
+.figure--img {
+  width: 100%;
+  max-width: 36rem;
+}
+
+//case-study
+.contenido-case-study{
+  background-color: #F8F3FF;
+}
+
+.accordion-button, .accordion-collapse{
+  background-color: #F8F3FF !important;
+}
+
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+.grid > figure img {
+  max-width: 100%;
+}
+.container--btn {
+  padding: 0 20px 20px;
+  position: relative;
+}
+
+.container--btn > button {
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  
+}
+
+//testimonio seccion
+
+.container-testimonio{
+  position: relative;
+}
+
+.container-testimonio p{
+  font-family: 'Montaga', serif;
+  
+}
+
+.figura-testimonio{
+  width: 100%;
+  max-width: 250px;
+  position: absolute;
+  top: -10rem;
+  left: 0;
+}
+.figure__testimonio-img{
+  max-width: 400px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+
+//footer
+footer {
+  color: #fff;
+  background-color: #000;
+
+  span,
+  small {
+    font-family: "Montaga", serif;
+  }
+  .footer-talk-bg {
+    color: #ffbb71;
+  }
+
+  .linea--bottom {
+    border-bottom: 1px solid rgba(204, 204, 204, 0.19);
+  }
+}
+.input-footer {
+  width: 100%;
+  display: block;
+  height: 4rem;
+  background-color: #1a1a1a;
+  border: none !important;
+}
+
+.footer-fire {
+  color: #ee1f28;
+  font-style: italic;
+  font-family: "Montaga", serif;
+}
+
