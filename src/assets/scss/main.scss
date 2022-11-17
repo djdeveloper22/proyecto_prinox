@@ -10,6 +10,21 @@
 @import './mediaquery.scss';
 
 //header
+.cart-nav {
+  position: fixed;
+  height: 100%;
+  width: 400px;
+  right: -400px;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.cart-nav.toggled{
+  right: 0;
+}
+
 .container__logo{
   margin: 0 1rem;
 }

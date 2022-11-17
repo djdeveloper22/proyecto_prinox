@@ -69,7 +69,8 @@ h4 {
   -webkit-animation-duration: 2s;
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  -webkit-animation-iteration-count: infinite; }
+  -webkit-animation-iteration-count: infinite;
+  padding-top: 4rem; }
 
 @-webkit-keyframes bounce {
   from {
@@ -226,6 +227,19 @@ h4 {
     font-size: 2rem !important; }
     .estilo-quality.efecto-reflejo::after {
       font-size: 2.5rem !important; } }
+
+.cart-nav {
+  position: fixed;
+  height: 100%;
+  width: 400px;
+  right: -400px;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+  transition: 0.2s; }
+
+.cart-nav.toggled {
+  right: 0; }
 
 .container__logo {
   margin: 0 1rem; }
