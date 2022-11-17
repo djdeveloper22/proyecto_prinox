@@ -21,18 +21,73 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body>
     <div id="app">
+      <!-- seccion productos carrito -->
+    <div class="cart-nav" id="contenedor__productos" :class="toggled == true ? 'toggled':'' ">
+      <!--v-if-->
+      <div class="cart-items d-flex flex-column p-3">
+        <div class="d-flex justify-content-between">
+          <h3>To car</h3><i style="cursor: pointer;" class="bi bi-x-lg" id="cerrar" @click="toggled = false"></i>
+        </div>
+        <hr>
+        <div class="d-flex flex-column text-center productosCarrito">
+          <div class="d-flex justify-content-around align-items-start pt-1 pb-1" v-for="(product,index) in cart"
+            :key='product'>
+            <span class="fs-6 p-1">{{product.title}}</span>
+            <div class="d-flex  w-25">
+              <span class="p-1">total {{product.price.toLocaleString("en-us", {
+                style: "currency",
+                currency: "usd",
+                })}}</span>
+              <div>
+                <i @click="removeFromCart(index)" class="bi bi-x-circle-fill fs-5"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div v-if="cart.length < 1">
+              <img src="./src/assets/img/Add to Cart-amico.d0a5b521.svg" class="img-fluid imageResizerChangedClass"
+                style="width: 190.631px; height: 190.631px; position: relative;" width="inherit" height="inherit">
+              <h5 class="text-black-50">Tu carrito esta vacio</h5>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column  border-top pt-3">
+          <div class="d-flex justify-content-between">
+            <div class="my-auto">
+              <h1 class="fw-normal estilo-total">Total</h1>
+            </div>
+            <div>
+              <h6 class="my-auto fw-light pb-2">Sub total: <span>{{total.toLocaleString("en-us", {
+                  style: "currency",
+                  currency: "usd",
+                  })}}</span> </h6>
+              <h6 class="my-auto fw-light pb-2">ITBMS {{(total * 0.07).toLocaleString("en-us", {
+                style: "currency",
+                currency: "usd",
+                })}}</h6>
+              <h3 class="my-auto fw-bold"> Total {{(total * 1.07).toLocaleString("en-us", {
+                style: "currency",
+                currency: "usd",
+                })}}</h3>
+            </div>
+          </div>
+          <button class="btn btn-warning my-3 py-2" @click="pay()"> Ir a checkout</button>
+        </div>
+      </div>
+    </div>
+    <!-- /seccion productos carrito -->
       <header>
         <nav class="navbar navbar-expand-lg bg-light">
           <div class="container-fluid wow animate__animated animate__fadeIn">
-            <div class="header__btn">
-              <button type="button" class="btn btn-warning btn--contact">
-                Contact Us
-              </button>
-              <i class="bi bi-bag bi--icon-compra"></i>
-            </div>
+            <a class="navbar-brand" href="#">
+              <figure class="container__logo">
+                <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
+              </figure>
+            </a>
             <button
               class="navbar-toggler"
               type="button"
@@ -76,11 +131,17 @@
                 </li>
               </ul>
             </div>
-            <a class="navbar-brand" href="#">
-              <figure class="container__logo">
-                <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
-              </figure>
-            </a>
+            <div class="header__btn">
+              <li class="spacing-carrito" id="carrito">
+                <a @click="toggled = true" style="cursor: pointer;"
+                class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
+                  class="bi bi-cart4"></i><span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
+                </a>
+            </li>
+              <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
+            </div>
           </div>
         </nav>
       </header>
@@ -1026,6 +1087,147 @@
     <script src="./src/core/js/WOW.js"></script>
     <script>
       new WOW().init();
+    </script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            toggled: false,
+            products: [
+           
+
+            ],
+            cart: [],
+            total: 0,
+
+          }
+        },
+        methods: {
+          addToCart(item) {
+            this.cart.push(item);
+            this.getTotal();
+            Toastify({
+              text: "Producto Agregado",
+              duration: 3000,
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "left", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to top, #DED3CF, #DED3CF)",
+                color: '#000'
+              },
+              onClick: function () { } // Callback after click
+            }).showToast();
+
+          },
+          removeFromCart(index) {
+            this.cart.splice(index, 1);
+            this.getTotal();
+          },
+          getTotal() {
+            this.total = this.cart.reduce((a, b) => {
+              return a + b.price;
+            }, 0);
+            console.log(this.total)
+          },
+          async pay() {
+            fetch("https://pime-payments.herokuapp.com/checkout/order", {
+              method: 'POST',
+              headers: {
+                "Content-Type": "application/json",
+                api_key:
+                  "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
+                project_id: "6351286c9c501eba2960b070",
+              },
+              mode: "cors",
+
+              body: JSON.stringify({
+                sandbox: false,
+                vat: true,
+                items: this.cart,
+                /* 
+                items: [
+                        {
+                                title:'titulo del item',
+                                price: 1.00,
+                                qty:1
+                        }
+
+                ]
+                */
+
+              })
+            }).then(async res => {
+              this.loading = false
+              let data = await res.json();
+              console.log(data)
+              if (res.status === 200) {
+                window.location.href = data
+              } else {
+                alert('hubo un error')
+              }
+            })
+          }
+        },
+
+        async mounted() {
+          const btnCarrito = document.querySelector('#btnCarrito');
+          const btn_agregar = document.querySelectorAll('#btn_agregar');
+          const msj = document.querySelector('.msj-producto');
+          
+          const body = document.querySelector('body');
+          const loading = document.querySelector('.loading');
+          body.style.overflow = 'hidden';
+
+          function quit(body){
+            timeout = setTimeout(()=>{
+              body.style.overflow = 'visible';
+              loading.remove();
+            }, 4000);
+          }
+
+          quit(body);
+        
+          fetch(
+            `https://cms.api.apexcms.cloud/v1/api/schemas`,
+            {
+              headers: {
+                api_key:
+                  "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
+                project_id: "6351286c9c501eba2960b070",
+              },
+              methods: "POST",
+            }
+          ).then(async (res) => {
+            let data = await res.json();
+
+            this.products = data?.Agendas.entries.map(item=>{
+              let fields = item.fields
+              console.log(fields)
+              return {
+                title:fields.title.value,
+                description:fields.description.value,
+                price:parseFloat(fields.price.value),
+                downloadLink:fields.product.value,
+                thumb:fields.image.value,
+                qty:1,
+              }
+            })
+            console.log(this.products)
+
+            // btnCarrito.addEventListener('click', () => {
+            //   msj.style.top = '2rem';
+            //   setTimeout(function () {
+            //     msj.style.top = '-5rem';
+            //   }, 3000);
+            // });
+
+          });
+
+        }
+      }).mount("#app")
     </script>
   </body>
 </html>
