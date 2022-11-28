@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto - Prinox</title>
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="./src/assets/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <script src="https://unpkg.com/vue@3"></script>
-  </head>
-  <body>
-    <div id="app">
-      <!-- seccion productos carrito -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto - Prinox</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./src/assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- seccion productos carrito -->
     <div class="cart-nav" id="contenedor__productos" :class="toggled == true ? 'toggled':'' ">
       <!--v-if-->
       <div class="cart-items d-flex flex-column p-3">
@@ -80,245 +72,226 @@
       </div>
     </div>
     <!-- /seccion productos carrito -->
-      <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-          <div class="container-fluid wow animate__animated animate__fadeIn">
-            <a class="navbar-brand" href="#">
-              <figure class="container__logo">
-                <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
-              </figure>
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul
-                class="navbar-nav w-100 d-flex justify-content-around align-items-center"
-              >
-                <li class="nav-item p-1">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >My Accounts</a
-                  >
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link" href="#">Contact Us</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link">Shop</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link">Proyects</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link">Services</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link">About</a>
-                </li>
-                <li class="nav-item p-1">
-                  <a class="nav-link">Home</a>
-                </li>
-              </ul>
-            </div>
-            <div class="header__btn">
-              <li class="spacing-carrito" id="carrito">
-                <a @click="toggled = true" style="cursor: pointer;"
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid wow animate__animated animate__fadeIn">
+          <a class="navbar-brand" href="#">
+            <figure class="container__logo">
+              <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
+            </figure>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 d-flex justify-content-around align-items-center">
+              <li class="nav-item p-1">
+                <a class="nav-link active" aria-current="page" href="#">My Accounts</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link">Shop</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link">Proyects</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link">Services</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link">About</a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header__btn">
+            <li class="spacing-carrito" id="carrito">
+              <a @click="toggled = true" style="cursor: pointer;"
                 class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
                   class="bi bi-cart4"></i><span
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                   id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
-                </a>
+              </a>
             </li>
-              <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
+            <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="slide">
+      <div class="container-fluid bg-fondo-slide h-auto">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 col-md-1 container-redes row bg-light h-100 flex-column p-3">
+            <div class="row">
+              <div class="col wow animate__animated animate__fadeInDown">
+                <a href="#">djmendoza@outlook.com</a>
+              </div>
+              <div class="col wow animate__animated animate__fadeInUp text-end">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Whatsapp</a>
+              </div>
             </div>
           </div>
-        </nav>
-      </header>
-      <div class="slide">
-        <div class="container-fluid bg-fondo-slide h-auto">
-          <div class="row h-100 align-items-center">
-            <div
-              class="col-12 col-md-1 container-redes row bg-light h-100 flex-column p-3"
-            >
+          <div class="col-12 pt-md-5 pb-md-5 col-md-5 wow animate__animated animate__bounceInLeft">
+            <figure class="rebote">
+              <img src="./src/assets/img/img-seccion-slide.png" alt="vision" />
+            </figure>
+          </div>
+          <div class="col-12 pb-5 pt-md-5 pb-md-5 col-md-6 text-end wow animate__animated animate__bounceInRight">
+            <div class="text-end">
+              <span class="estilo-p">Digital Printing Service</span>
+              <h1 class="estilo-title">
+                Produce Stuning Printing For Your Business
+              </h1>
+              <p class="title-parrafo">
+                We are genuenely invested in your company and getting you
+                result
+              </p>
+            </div>
+            <div class="d-flex justify-content-end align-items-center">
+              <div class="container-radar">
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <i class="bi bi-play-circle bi--icon-play bi--icon-play--header p-2"></i>
+              </div>
+              <button type="button" class="btn btn-warning btn--contact">
+                Get In Touch <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row container-visitas w-50 bg-light p-2 text-end">
+          <div class="col wow animate__animated animate__backInUp">
+            <h3>+ K 25</h3>
+            <p>Projects Done</p>
+          </div>
+          <div class="col wow animate__animated animate__backInUp">
+            <h3>+ M 72</h3>
+            <p>Printing Media</p>
+          </div>
+          <div class="col wow animate__animated animate__backInUp">
+            <h3>+K 05</h3>
+            <p>Daily Customer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="contenido-informacion">
+        <div class="row wow animate__animated animate__slideInUp p-5 text-end">
+          <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
+            <i class="bi bi-gem bi--informacion"></i>
+            <h4>Design Services</h4>
+            <p>
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
+            <i class="bi bi-printer bi--informacion"></i>
+            <h4>Quality Gaurentee</h4>
+            <p>
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
+            <i class="bi bi-badge-4k bi--informacion"></i>
+            <h4>Brand Strategy</h4>
+            <p>
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
+            <i class="bi bi-qr-code-scan bi--informacion"></i>
+            <h4>Digital Scaning</h4>
+            <p>
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contenido-producer pb-5 pt-5">
+        <div class="row">
+          <div
+            class="col-12 wow animate__animated animate__slideInLeft col-md-12 col-lg-6 text-end fondo-img-informacion">
+            <span class="estilo-p mb-3">Abouts Printing Service</span>
+            <h1 class="estilo-title title--producer">
+              Produce Stuning Printing For Your Business
+            </h1>
+            <p class="title-parrafo parrafo--producer mt-3">
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+            <div class="container-fluid container-icon mt-5">
               <div class="row">
-                <div class="col wow animate__animated animate__fadeInDown">
-                  <a href="#">djmendoza@outlook.com</a>
+                <div class="d-flex">
+                  <div class="col d-flex">
+                    <div>
+                      <h4 class="fs-5">Business Card Design</h4>
+                      <p class="fs-6">
+                        Attract relevant users using specific hashtags
+                      </p>
+                    </div>
+                    <div class="container-bi-clipboard2-check m-1">
+                      <i class="bi bi-list-task"></i>
+                    </div>
+                  </div>
+
+                  <div class="col d-flex">
+                    <div>
+                      <h4 class="fs-5">Banners Printing</h4>
+                      <p class="fs-6">
+                        Attract relevant users using specific hashtags
+                      </p>
+                    </div>
+                    <div class="container-bi-clipboard2-check m-1">
+                      <i class="bi bi-clipboard2-check"></i>
+                    </div>
+                  </div>
                 </div>
-                <div class="col wow animate__animated animate__fadeInUp text-end">
-                  <a href="#">Facebook</a>
-                  <a href="#">Twitter</a>
-                  <a href="#">Whatsapp</a>
+                <div class="col mt-4 line pb-3">
+                  <p class="parrafo">
+                    Large paper & stock selection & Unique Print
+                    <i class="bi bi-check2"></i>
+                  </p>
+                  <p class="parrafo">
+                    Printing programs tailored to your company needs
+                    <i class="bi bi-check2"></i>
+                  </p>
                 </div>
               </div>
-            </div>
-            <div class="col-12 pt-md-5 pb-md-5 col-md-5 wow animate__animated animate__bounceInLeft">
-              <figure class="rebote">
-                <img
-                  src="./src/assets/img/img-seccion-slide.png"
-                  alt="vision"
-                />
-              </figure>
-            </div>
-            <div class="col-12 pb-5 pt-md-5 pb-md-5 col-md-6 text-end wow animate__animated animate__bounceInRight">
-              <div class="text-end">
-                <span class="estilo-p">Digital Printing Service</span>
-                <h1 class="estilo-title">
-                  Produce Stuning Printing For Your Business
-                </h1>
-                <p class="title-parrafo">
-                  We are genuenely invested in your company and getting you
-                  result
-                </p>
-              </div>
-              <div class="d-flex justify-content-end align-items-center">
-                <div class="container-radar">
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <i
-                    class="bi bi-play-circle bi--icon-play bi--icon-play--header p-2"
-                  ></i>
-                </div>
-                <button type="button" class="btn btn-warning btn--contact">
-                  Get In Touch <i class="bi bi-arrow-right"></i>
-                </button>
+              <div class="col mt-4 text-end">
+                <p class="parrafo">Foqrul Saheb Senior Artist Developer</p>
               </div>
             </div>
           </div>
-          <div class="row container-visitas w-50 bg-light p-2 text-end">
-            <div class="col wow animate__animated animate__backInUp">
-              <h3>+ K 25</h3>
-              <p>Projects Done</p>
-            </div>
-            <div class="col wow animate__animated animate__backInUp">
-              <h3>+ M 72</h3>
-              <p>Printing Media</p>
-            </div>
-            <div class="col wow animate__animated animate__backInUp">
-              <h3>+K 05</h3>
-              <p>Daily Customer</p>
+          <div class="wow animate__animated animate__slideInRight col-12 col-md-12 col-lg-6">
+            <div class="container estilo-grid row">
+              <div class="col-6 col-md-8 col-lg-6">
+                <img src="./src/assets/img/img-producer1.jpg" alt="" />
+              </div>
+              <div class="col-6 col-md-4 col-lg-6">
+                <img src="./src/assets/img/img-producer2.jpg" alt="" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <main>
-        <div class="contenido-informacion">
-          <div class="row wow animate__animated animate__slideInUp p-5 text-end">
-            <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
-              <i class="bi bi-gem bi--informacion"></i>
-              <h4>Design Services</h4>
-              <p>
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
-              <i class="bi bi-printer bi--informacion"></i>
-              <h4>Quality Gaurentee</h4>
-              <p>
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
-              <i class="bi bi-badge-4k bi--informacion"></i>
-              <h4>Brand Strategy</h4>
-              <p>
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center text-md-end">
-              <i class="bi bi-qr-code-scan bi--informacion"></i>
-              <h4>Digital Scaning</h4>
-              <p>
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="contenido-producer pb-5 pt-5">
-          <div class="row">
-            <div
-              class="col-12 wow animate__animated animate__slideInLeft col-md-12 col-lg-6 text-end fondo-img-informacion"
-            >
-              <span class="estilo-p mb-3">Abouts Printing Service</span>
-              <h1 class="estilo-title title--producer">
-                Produce Stuning Printing For Your Business
-              </h1>
-              <p class="title-parrafo parrafo--producer mt-3">
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-              <div class="container-fluid container-icon mt-5">
-                <div class="row">
-                  <div class="d-flex">
-                    <div class="col d-flex">
-                      <div>
-                        <h4 class="fs-5">Business Card Design</h4>
-                        <p class="fs-6">
-                          Attract relevant users using specific hashtags
-                        </p>
-                      </div>
-                      <div class="container-bi-clipboard2-check m-1">
-                        <i class="bi bi-list-task"></i>
-                      </div>
-                    </div>
-
-                    <div class="col d-flex">
-                      <div>
-                        <h4 class="fs-5">Banners Printing</h4>
-                        <p class="fs-6">
-                          Attract relevant users using specific hashtags
-                        </p>
-                      </div>
-                      <div class="container-bi-clipboard2-check m-1">
-                        <i class="bi bi-clipboard2-check"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col mt-4 line pb-3">
-                    <p class="parrafo">
-                      Large paper & stock selection & Unique Print
-                      <i class="bi bi-check2"></i>
-                    </p>
-                    <p class="parrafo">
-                      Printing programs tailored to your company needs
-                      <i class="bi bi-check2"></i>
-                    </p>
-                  </div>
-                </div>
-                <div class="col mt-4 text-end">
-                  <p class="parrafo">Foqrul Saheb Senior Artist Developer</p>
-                </div>
-              </div>
-            </div>
-            <div class="wow animate__animated animate__slideInRight col-12 col-md-12 col-lg-6">
-              <div class="container estilo-grid row">
-                <div class="col-6 col-md-8 col-lg-6">
-                  <img src="./src/assets/img/img-producer1.jpg" alt="" />
-                </div>
-                <div class="col-6 col-md-4 col-lg-6">
-                  <img src="./src/assets/img/img-producer2.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-card container-fluid pt-5 pb-4">
+      <!-- <div class="container-card container-fluid pt-5 pb-4">
           <div class="containerm container">
             <div class="row">
               <div class="wow animate__animated animate__zoomIn col-6 col-md-6 col-lg-3">
@@ -363,170 +336,349 @@
               </div>
             </div>
           </div>
+        </div> -->
+      <!-- prueba card -->
+      <section class="p-3 container">
+        <div class="row">
+          <h2 class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp" style="color:#6F665D">
+            Nuestros Productos
+          </h2>
+          <div class="container__card" v-if="products.length > 0">
+            <div class="bg-image wow animate__animated animate__fadeInUp  rounded-4" v-for="product in products"
+              :key="product">
+              <div class="miCard rounded-4 d-flex flex-column justify-content-around">
+                <div class="contenido__precios">
+                  <small>SALE</small>
+                  <h4>{{product.title}}</h4>
+                  <small>{{product.price.toLocaleString("en-us", {
+                    style: "currency",
+                    currency: "usd",
+                    })}}</small>
+                </div>
+                <div class="contenido__accion d-flex flex-column">
+                  <img class="imgLogoCard" src="./src/assets/img/logo-prinox.svg" alt="">
+                  <span>{{product.seo}}</span>
+                  <span>{{product.lider}}</span>
+                  <div class="container_card__btn d-flex">
+                    <button class="rounded-2 border-0 bg--btnCard" data-bs-toggle="modal"
+                      :data-bs-target="'#exampleModal_'+product.id">Ver producto</button>
+                    <button class="border-0 rounded-2 bg--btnCard" @click="addToCart(product)">Agregar al
+                      Carrito</button>
+                  </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade " :id="'exampleModal_'+product.id" tabindex="-1"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog rounded-3 modal-lg modal-content--content">
+                    <div class="modal-content h-auto ">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Shop</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-producto h-auto">
+                        <!-- contenido del modal -->
+                        <div class="row">
+                          <div class="col-12 col-md-6 col-lg-6">
+                            <figure class="figure__modal-logo">
+                              <img src="./src/assets/img/card2.jpg" alt="producto digital">
+                            </figure>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-6 d-flex flex-column p-4 justify-content-between">
+                            <small class="bg-sale p-1 fs-6 mb-1">SALE</small>
+                            <h3>{{product.title}}</h3>
+                            <div class="d-flex">
+                              <small class="mb-2"
+                                :class="product.descuento !== ''? 'text-decoration-line-through':''">$119 -
+                              </small><span v-if="product.descuento !== ''">{{product.descuento}}</span>
+                            </div>
+                            <p>{{product.description}}</p>
+                            <button class="btn btn-primary" id="btnCarrito" href="#" @click="addToCart(product)">Add To
+                              Cart</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal -->
+              </div>
+
+
+            </div>
+          </div>
         </div>
-        <div class="container-office-address pt-5">
-          <div
-            class="row container-fluid estilo-border p-5 d-flex justify-content-center align-items-center"
-          >
-            <div class="wow animate__animated animate__rotateInUpRight col d-flex">
-              <div class="d-flex justify-content-end align-items-center">
-                <button type="button" class="btn btn-warning btn--contact">
-                  Get Detail <i class="bi bi-arrow-right"></i>
-                </button>
-                <div class="container-radar">
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <div class="radar"></div>
-                  <i
-                    class="bi bi-play-circle bi--icon-play bi--icon-play--address p-2"
-                  ></i>
+      </section>
+      <!-- \fin -->
+      <div class="container-office-address pt-5">
+        <div class="row container-fluid estilo-border p-5 d-flex justify-content-center align-items-center">
+          <div class="wow animate__animated animate__rotateInUpRight col d-flex">
+            <div class="d-flex justify-content-end align-items-center">
+              <button type="button" class="btn btn-warning btn--contact">
+                Get Detail <i class="bi bi-arrow-right"></i>
+              </button>
+              <div class="container-radar">
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <div class="radar"></div>
+                <i class="bi bi-play-circle bi--icon-play bi--icon-play--address p-2"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="separador"></div>
+          </div>
+          <div class="col  wow animate__animated animate__rotateInUpRight">
+            <div class="office-address-texto">
+              <small>Looking For Office</small>
+              <h4 class="fs-4">Our Office Address</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="separador w-100"></div>
+          </div>
+          <div class="col  wow animate__animated animate__rotateInUpRight">
+            <div class="office-address-texto">
+              <small>Printing Projects</small>
+              <h4 class="fs-4">
+                For Collaboration
+                <i class="bi bi-circle-fill bi--estilo-circle"></i>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-reflejo p-5">
+        <div class="row p-5">
+          <div class="col wow animate__animated animate__lightSpeedInLeft text-center p-5">
+            <span class="estilo-quality efecto-reflejo">
+              Design. <span class="text-color">Printing</span>. Quality <br /></span>
+          </div>
+        </div>
+      </div>
+      <div class="container-servicio wow animate__animated animate__fadeInRight">
+        <div class="row m-2">
+          <div class="col bg--hover bg-pan-left bg-gradient-left">
+            <span class="estilos-texto-service">Before Service</span>
+            <img src="./src/assets/img/service0.png" alt="producto 1" />
+          </div>
+          <div class="col bg--hover bg-pan-right bg-gradient-hor">
+            <span class="estilos-texto-service">After Service</span>
+            <img src="./src/assets/img/service1.png" alt="producto 2" />
+          </div>
+        </div>
+        <div class="row container-fluid">
+          <div class="col text-end">
+            <div class="container-icons-start">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <span>Skill-screen printing</span>
+          </div>
+        </div>
+      </div>
+      <div class="contenido-informacion pt-5">
+        <h2 class="wow animate__animated animate__fadeInRightBig text-center pt-5 fs-1">?How we do it</h2>
+        <div class="row p-5 text-end wow animate__animated animate__fadeInUp">
+          <div class="col-12 col-md-6 text-center col-lg-3">
+            <i class="bi bi-send bi--informacion"></i>
+            <h4>Final Results</h4>
+            <p>
+              We build and activate <br />
+              through cultural insight
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center col-lg-3">
+            <i class="bi bi-geo-alt bi--informacion"></i>
+            <h4>Long Runing</h4>
+            <p>
+              We build and activate <br />
+              through cultural insight
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center col-lg-3">
+            <i class="bi bi-printer bi--informacion"></i>
+            <h4>Offset Printing</h4>
+            <p>
+              We build and activate <br />
+              through cultural insight
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-center col-lg-3">
+            <i class="bi bi-fingerprint bi--informacion"></i>
+            <h4>Quick Printing</h4>
+            <p>
+              We build and activate <br />
+              through cultural insight
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contenido-producer pb-5 pt-5">
+        <div class="row">
+          <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__fadeInLeft">
+            <span class="estilo-p estilo--p mb-3">High Fidality Service</span>
+            <h1 class="estilo-title title--producer">
+              Our G7 certification means you’ll get higher quality
+            </h1>
+            <p class="title-parrafo parrafo--producer mt-3">
+              We build and activate brands through cultural insight, str
+              vision, and the power of emotion across every
+            </p>
+            <div class="container-fluid container-icon">
+              <div class="row">
+                <div class="d-flex">
+                  <div class="col d-flex">
+                    <div class="col mt-4 line pb-3">
+                      <p class="parrafo">
+                        More accurate match between press and proof<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        Similar visual appearance across all print processes<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        Better color control saving you time and money<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        We provide fast on-demand printing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col mt-4 text-end">
+                <div class="col d-flex justify-content-end align-items-center">
+                  <div class="container-radar">
+                    <div class="radar"></div>
+                    <div class="radar"></div>
+                    <div class="radar"></div>
+                    <div class="radar"></div>
+                    <i class="bi bi-play-circle bi--icon-play bi--icon-play-2 p-2"></i>
+                  </div>
+                  <button type="button" class="btn btn-warning btn--contact">
+                    Start with Us
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="separador"></div>
-            </div>
-            <div class="col  wow animate__animated animate__rotateInUpRight">
-              <div class="office-address-texto">
-                <small>Looking For Office</small>
-                <h4 class="fs-4">Our Office Address</h4>
-              </div>
-            </div>
-            <div class="col">
-              <div class="separador w-100"></div>
-            </div>
-            <div class="col  wow animate__animated animate__rotateInUpRight">
-              <div class="office-address-texto">
-                <small>Printing Projects</small>
-                <h4 class="fs-4">
-                  For Collaboration
-                  <i class="bi bi-circle-fill bi--estilo-circle"></i>
-                </h4>
+          </div>
+
+          <div class="col-12 col-lg-6 wow animate__animated animate__fadeInRight">
+            <div class="container">
+              <div class="col container--figure">
+                <figure class="figure--img">
+                  <img src="./src/assets/img/img-certi.png" alt="" />
+                </figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="container-reflejo p-5">
-          <div class="row p-5">
-            <div class="col wow animate__animated animate__lightSpeedInLeft text-center p-5">
-              <span class="estilo-quality efecto-reflejo">
-                Design. <span class="text-color">Printing</span>. Quality <br
-              /></span>
-            </div>
-          </div>
-        </div>
-        <div class="container-servicio wow animate__animated animate__fadeInRight">
-          <div class="row m-2">
-            <div class="col bg--hover bg-pan-left bg-gradient-left">
-              <span class="estilos-texto-service">Before Service</span>
-              <img src="./src/assets/img/service0.png" alt="producto 1" />
-            </div>
-            <div class="col bg--hover bg-pan-right bg-gradient-hor">
-              <span class="estilos-texto-service">After Service</span>
-              <img src="./src/assets/img/service1.png" alt="producto 2" />
-            </div>
-          </div>
-          <div class="row container-fluid">
-            <div class="col text-end">
-              <div class="container-icons-start">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
+      </div>
+      <div class="contenido-producer contenido-case-study pb-5 pt-5">
+        <div class="row pb-5">
+          <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__fadeInLeft">
+            <span class="estilo-p estilo--p mb-3">High Fidality Service</span>
+            <h1 class="estilo-title title--producer">
+              We are just better Quality for over 35 years
+            </h1>
+            <p class="title-parrafo parrafo--producer mt-3">
+              What’s more, we do it right! A full administration printing
+              background
+            </p>
+            <div class="container-fluid container-icon">
+              <div class="row">
+                <div class="d-flex">
+                  <div class="col d-flex">
+                    <div class="col mt-4 line pb-3">
+                      <p class="parrafo">
+                        More accurate match between press and proof<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        Similar visual appearance across all print processes<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        Better color control saving you time and money<i class="bi bi-check2"></i>
+                      </p>
+                      <p class="parrafo">
+                        We provide fast on-demand printing
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <span>Skill-screen printing</span>
-            </div>
-          </div>
-        </div>
-        <div class="contenido-informacion pt-5">
-          <h2 class="wow animate__animated animate__fadeInRightBig text-center pt-5 fs-1">?How we do it</h2>
-          <div class="row p-5 text-end wow animate__animated animate__fadeInUp">
-            <div class="col-12 col-md-6 text-center col-lg-3">
-              <i class="bi bi-send bi--informacion"></i>
-              <h4>Final Results</h4>
-              <p>
-                We build and activate <br />
-                through cultural insight
-              </p>
-            </div>
-            <div class="col-12 col-md-6 text-center col-lg-3">
-              <i class="bi bi-geo-alt bi--informacion"></i>
-              <h4>Long Runing</h4>
-              <p>
-                We build and activate <br />
-                through cultural insight
-              </p>
-            </div>
-            <div class="col-12 col-md-6 text-center col-lg-3">
-              <i class="bi bi-printer bi--informacion"></i>
-              <h4>Offset Printing</h4>
-              <p>
-                We build and activate <br />
-                through cultural insight
-              </p>
-            </div>
-            <div class="col-12 col-md-6 text-center col-lg-3">
-              <i class="bi bi-fingerprint bi--informacion"></i>
-              <h4>Quick Printing</h4>
-              <p>
-                We build and activate <br />
-                through cultural insight
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="contenido-producer pb-5 pt-5">
-          <div class="row">
-            <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__fadeInLeft">
-              <span class="estilo-p estilo--p mb-3">High Fidality Service</span>
-              <h1 class="estilo-title title--producer">
-                Our G7 certification means you’ll get higher quality
-              </h1>
-              <p class="title-parrafo parrafo--producer mt-3">
-                We build and activate brands through cultural insight, str
-                vision, and the power of emotion across every
-              </p>
-              <div class="container-fluid container-icon">
-                <div class="row">
-                  <div class="d-flex">
-                    <div class="col d-flex">
-                      <div class="col mt-4 line pb-3">
-                        <p class="parrafo">
-                          More accurate match between press and proof<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          Similar visual appearance across all print processes<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          Better color control saving you time and money<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          We provide fast on-demand printing
-                        </p>
+              <div class="row">
+                <div class="col">
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Terms & Conditions
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            We build and activate brands through cultural
+                            insight, vision, and the power of emotion across
+                            every
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Commitment & Target
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            We build and activate brands through cultural
+                            insight, vision, and the power of emotion across
+                            every
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseThree" aria-expanded="false"
+                          aria-controls="flush-collapseThree">
+                          How We Produce Quality
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            We build and activate brands through cultural
+                            insight, vision, and the power of emotion across
+                            every
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col mt-4 text-end">
-                  <div
-                    class="col d-flex justify-content-end align-items-center"
-                  >
+                  <span class="fs-2">Digital Printing</span>
+                  <div class="col d-flex justify-content-end align-items-center">
                     <div class="container-radar">
                       <div class="radar"></div>
                       <div class="radar"></div>
                       <div class="radar"></div>
                       <div class="radar"></div>
-                      <i
-                        class="bi bi-play-circle bi--icon-play bi--icon-play-2 p-2"
-                      ></i>
+                      <i class="bi bi-play-circle bi--icon-play bi--icon-play-2 p-2"></i>
                     </div>
                     <button type="button" class="btn btn-warning btn--contact">
                       Start with Us
@@ -535,380 +687,169 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="col-12 col-lg-6 wow animate__animated animate__fadeInRight">
+            <div class="container">
+              <div class="row">
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case "><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt="">
+                  </figure>
 
-            <div class="col-12 col-lg-6 wow animate__animated animate__fadeInRight">
-              <div class="container">
-                <div class="col container--figure">
-                  <figure class="figure--img">
-                    <img src="./src/assets/img/img-certi.png" alt="" />
+                </div>
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase2.jpg" alt="">
+                  </figure>
+                </div>
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt="">
+                  </figure>
+                </div>
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt="">
+                  </figure>
+                </div>
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase2.jpg" alt="">
+                  </figure>
+                </div>
+                <div class="col-6 col-md-4">
+                  <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt="">
                   </figure>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="contenido-producer contenido-case-study pb-5 pt-5">
-          <div class="row pb-5">
-            <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__fadeInLeft">
-              <span class="estilo-p estilo--p mb-3">High Fidality Service</span>
-              <h1 class="estilo-title title--producer">
-                We are just better Quality for over 35 years
-              </h1>
-              <p class="title-parrafo parrafo--producer mt-3">
-                What’s more, we do it right! A full administration printing
-                background
-              </p>
-              <div class="container-fluid container-icon">
-                <div class="row">
-                  <div class="d-flex">
-                    <div class="col d-flex">
-                      <div class="col mt-4 line pb-3">
-                        <p class="parrafo">
-                          More accurate match between press and proof<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          Similar visual appearance across all print processes<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          Better color control saving you time and money<i
-                            class="bi bi-check2"
-                          ></i>
-                        </p>
-                        <p class="parrafo">
-                          We provide fast on-demand printing
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div
-                      class="accordion accordion-flush"
-                      id="accordionFlushExample"
-                    >
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseOne"
-                          >
-                            Terms & Conditions
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseOne"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingOne"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              We build and activate brands through cultural
-                              insight, vision, and the power of emotion across
-                              every
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseTwo"
-                          >
-                            Commitment & Target
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseTwo"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingTwo"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              We build and activate brands through cultural
-                              insight, vision, and the power of emotion across
-                              every
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseThree"
-                          >
-                            How We Produce Quality
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseThree"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingThree"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              We build and activate brands through cultural
-                              insight, vision, and the power of emotion across
-                              every
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col mt-4 text-end">
-                    <span class="fs-2">Digital Printing</span>
-                    <div
-                      class="col d-flex justify-content-end align-items-center"
-                    >
-                      <div class="container-radar">
-                        <div class="radar"></div>
-                        <div class="radar"></div>
-                        <div class="radar"></div>
-                        <div class="radar"></div>
-                        <i
-                          class="bi bi-play-circle bi--icon-play bi--icon-play-2 p-2"
-                        ></i>
-                      </div>
-                      <button
-                        type="button"
-                        class="btn btn-warning btn--contact"
-                      >
-                        Start with Us
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 wow animate__animated animate__fadeInRight">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case "><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt=""></figure>
-                    
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase2.jpg" alt=""></figure>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt=""></figure>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt=""></figure>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase2.jpg" alt=""></figure>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <figure class="img-container-case"><img class="rounded" src="./src/assets/img/imgCase6.jpg" alt=""></figure>
-                  </div>
-                </div>
-              </div>
-            </div>
+      </div>
+      <!-- seccion testimonio -->
+      <div class="container-testimonio p-5">
+        <figure class="figura-testimonio">
+          <img src="./src/assets/img/pattern-2.png" alt="" />
+        </figure>
+        <div class="row text-end align-items-center">
+          <div class="col-12 col-md-8 col-md-8 wow animate__animated animate__bounceInLeft">
+            <span class="fs-1">Testimonials</span>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humour, or randomised words which even slightly
+              believable. If you are going to use a passage of Lorem Ipsum,
+              you need
+            </p>
+            <small>Foqrul Saheb Senior Artist Developer </small>
+          </div>
+          <div class="col-12 col-md-4">
+            <figure class="figure__testimonio-img bg-pan-right bg-gradient-hor wow animate__animated animate__pulse">
+              <img src="./src/assets/img/img1-testimonio.png" alt="" />
+            </figure>
           </div>
         </div>
-        <!-- seccion testimonio -->
-        <div class="container-testimonio p-5">
-          <figure class="figura-testimonio">
-            <img src="./src/assets/img/pattern-2.png" alt="" />
-          </figure>
-          <div class="row text-end align-items-center">
-            <div class="col-12 col-md-8 col-md-8 wow animate__animated animate__bounceInLeft">
-              <span class="fs-1">Testimonials</span>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which even slightly
-                believable. If you are going to use a passage of Lorem Ipsum,
-                you need
-              </p>
-              <small>Foqrul Saheb Senior Artist Developer </small>
-            </div>
-            <div class="col-12 col-md-4">
-              <figure
-                class="figure__testimonio-img bg-pan-right bg-gradient-hor wow animate__animated animate__pulse"
-              >
-                <img src="./src/assets/img/img1-testimonio.png" alt="" />
-              </figure>
-            </div>
-          </div>
-        </div>
-        <!--  -->
-        <div
-          class="contenido-producer container-preguntas contenido-case-study pb-5 pt-5"
-        >
-          <div class="row pb-5 justify-content-center align-items-center">
-            <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__bounceInUp">
-              <span class="estilo-p estilo--p mb-3"
-                >Frequently Ask Question</span
-              >
-              <h1 class="estilo-title title--producer">
-                Know stuning information For Your Business
-              </h1>
-              <p class="title-parrafo parrafo--producer mt-3">
-                There are many variations of passages of Lorem Ipsum avail
-                vision, and the power of emotion across every
-              </p>
-              <div class="container-fluid container-icon">
-                <div class="row">
-                  <div class="col-12 col-md-12">
-                    <div
-                      class="accordion accordion-flush"
-                      id="accordionFlushExample"
-                    >
-                      <div class="accordion-item">
-                        <h2
-                          class="accordion-header color"
-                          id="flush-headingOne"
-                        >
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseOne"
-                          >
-                            Bay Area 3D Printing is your premier source for
-                            product development
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseOne"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingOne"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              The other hand we denounce with righteou indg
-                              ation and dislike men who are so beguiled and
-                              demorali ed by the of pleasure of the
-                              moment.Dislike men who are so beguiled demoraliz
-                              worlds ed by the charms of pleasure of the moment.
-                              Lorem ipsum dolor sit
-                            </p>
-                          </div>
+      </div>
+      <!--  -->
+      <div class="contenido-producer container-preguntas contenido-case-study pb-5 pt-5">
+        <div class="row pb-5 justify-content-center align-items-center">
+          <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__bounceInUp">
+            <span class="estilo-p estilo--p mb-3">Frequently Ask Question</span>
+            <h1 class="estilo-title title--producer">
+              Know stuning information For Your Business
+            </h1>
+            <p class="title-parrafo parrafo--producer mt-3">
+              There are many variations of passages of Lorem Ipsum avail
+              vision, and the power of emotion across every
+            </p>
+            <div class="container-fluid container-icon">
+              <div class="row">
+                <div class="col-12 col-md-12">
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header color" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Bay Area 3D Printing is your premier source for
+                          product development
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            The other hand we denounce with righteou indg
+                            ation and dislike men who are so beguiled and
+                            demorali ed by the of pleasure of the
+                            moment.Dislike men who are so beguiled demoraliz
+                            worlds ed by the charms of pleasure of the moment.
+                            Lorem ipsum dolor sit
+                          </p>
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseTwo"
-                          >
-                            can depend on our team to provide exceptional
-                            solutions does they
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseTwo"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingTwo"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              It is a long established fact that a reader will
-                              be distracted by the readable content of a page
-                              when looking at its layout. The point of using
-                              Lorem Ipsum is that it has a more-or-less normal
-                              distribution of letters, as opposed to using
-                              'Content here, content here', making it look like
-                              readable English
-                            </p>
-                          </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          can depend on our team to provide exceptional
+                          solutions does they
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            It is a long established fact that a reader will
+                            be distracted by the readable content of a page
+                            when looking at its layout. The point of using
+                            Lorem Ipsum is that it has a more-or-less normal
+                            distribution of letters, as opposed to using
+                            'Content here, content here', making it look like
+                            readable English
+                          </p>
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseThree"
-                          >
-                            Bring any idea to life with the finest quality and
-                            accuracy in the additive industry
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseThree"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingThree"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              The other hand we denounce with righteou indg
-                              ation and dislike men who are so beguiled and
-                              demorali ed by the of pleasure of the
-                              moment.Dislike men who are so beguiled demoraliz
-                              worlds ed by the charms of pleasure of the moment.
-                              Lorem ipsum dolor sit
-                            </p>
-                          </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseThree" aria-expanded="false"
+                          aria-controls="flush-collapseThree">
+                          Bring any idea to life with the finest quality and
+                          accuracy in the additive industry
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            The other hand we denounce with righteou indg
+                            ation and dislike men who are so beguiled and
+                            demorali ed by the of pleasure of the
+                            moment.Dislike men who are so beguiled demoraliz
+                            worlds ed by the charms of pleasure of the moment.
+                            Lorem ipsum dolor sit
+                          </p>
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseThree"
-                          >
-                            Guaranteed repeatability, without having to
-                            sacrifice part quality?
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseThree"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingThree"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            <p>
-                              It is a long established fact that a reader will
-                              be distracted by the readable content of a page
-                              when looking at its layout. The point of using
-                              Lorem Ipsum is that it has a more-or-less normal
-                              distribution of letters, as opposed to using
-                              'Content here, content here', making it look like
-                              readable English
-                            </p>
-                          </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseThree" aria-expanded="false"
+                          aria-controls="flush-collapseThree">
+                          Guaranteed repeatability, without having to
+                          sacrifice part quality?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <p>
+                            It is a long established fact that a reader will
+                            be distracted by the readable content of a page
+                            when looking at its layout. The point of using
+                            Lorem Ipsum is that it has a more-or-less normal
+                            distribution of letters, as opposed to using
+                            'Content here, content here', making it look like
+                            readable English
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -918,160 +859,134 @@
             </div>
           </div>
         </div>
-      </main>
-      <footer class="w-100">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="row pt-5 linea--bottom">
-                <div
-                  class="col-12 col-md-6 d-flex justify-content-center align-items-center wow animate__animated animate__fadeInLeft"
-                >
-                  <form class="d-flex">
-                    <button
-                      type="button"
-                      class="btn btn-warning btn--contact btn--footer"
-                    >
-                      Start With Us <i class="bi bi-arrow-right"></i>
-                    </button>
-                    <div class="mb-3">
-                      <input
-                        placeholder="insert your email"
-                        type="email"
-                        class="form-control input-footer"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                  </form>
-                </div>
-                <div class="col-12 col-md-6 text-end wow animate__animated animate__fadeInRight">
-                  <span class="fs-1"
-                    >We’d like to <span class="footer-talk-bg">Talk</span>
-                  </span>
-                  <p>See Everything About Your Users At One Place</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 wow animate__animated animate__fadeInRight">
-              <div class="row pt-5">
-                <div class="col">
-                  <span class="fs-4">Our Information</span>
-                  <div class="row">
-                    <div class="col-6">
-                      <span class="fs-1">X8</span>
-                    </div>
-                    <div class="col-6">
-                      <p>Total Awards</p>
-                    </div>
-                    <div class="col-6">
-                      <figure>
-                        <img
-                          class="rounded"
-                          src="./src/assets/img/img-footer1.jpg"
-                          alt=""
-                        />
-                      </figure>
-                    </div>
-                    <div class="col-6">
-                      <figure>
-                        <img
-                          class="rounded"
-                          src="./src/assets/img/img-footer2.jpg"
-                          alt=""
-                        />
-                      </figure>
-                    </div>
-                    <div class="col-12">
-                      <small
-                        >We provide fast on-demand
-                        <span class="footer-fire">printing</span>
-                        <i class="bi bi-fire"></i
-                      ></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-end">
-                  <span class="fs-4">My Account</span>
-                  <ul>
-                    <li>Author</li>
-                    <li>How it Works</li>
-                    <li>Create Item</li>
-                    <li>Author Profile</li>
-                    <li>Terms and conditions</li>
-                    <li>Collection</li>
-                  </ul>
-                </div>
-                <div class="col text-end">
-                  <span class="fs-4">Marketplace</span>
-                  <ul>
-                    <li>Collectibles</li>
-                    <li>Domain Names</li>
-                    <li>Photography</li>
-                    <li>Sports</li>
-                    <li>Trading Cards</li>
-                    <li>Utility</li>
-                  </ul>
-                </div>
-                <div class="col text-end">
-                  <span class="fs-4">About Us</span>
-                  <ul>
-                    <li>The world’s first and largest digital</li>
-                    <li>marketplace for crypto collectibles and</li>
-                    <li>non-fungible tokens (NFTs). Buy</li>
-                    <li></li>
-                    <li>Lillian Blvd, Holbrook 254</li>
-                    <li>1-800-654-3210</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 pt-5 wow animate__animated animate__fadeInLeft">
+      </div>
+    </main>
+    <footer class="w-100">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="row pt-5 linea--bottom">
               <div
-                class="row container-fluid p-5 d-flex justify-content-center align-items-center"
-              >
-                <div
-                  class="col-12 col-md-12 col-lg-4 d-flex justify-content-center"
-                >
-                  <div class="office-address-texto text-center">
-                    <small>Looking For Office</small>
-                    <h4 class="fs-4">Our Office Address</h4>
+                class="col-12 col-md-6 d-flex justify-content-center align-items-center wow animate__animated animate__fadeInLeft">
+                <form class="d-flex">
+                  <button type="button" class="btn btn-warning btn--contact btn--footer">
+                    Start With Us <i class="bi bi-arrow-right"></i>
+                  </button>
+                  <div class="mb-3">
+                    <input placeholder="insert your email" type="email" class="form-control input-footer"
+                      id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  </div>
+                </form>
+              </div>
+              <div class="col-12 col-md-6 text-end wow animate__animated animate__fadeInRight">
+                <span class="fs-1">We’d like to <span class="footer-talk-bg">Talk</span>
+                </span>
+                <p>See Everything About Your Users At One Place</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 wow animate__animated animate__fadeInRight">
+            <div class="row pt-5">
+              <div class="col">
+                <span class="fs-4">Our Information</span>
+                <div class="row">
+                  <div class="col-6">
+                    <span class="fs-1">X8</span>
+                  </div>
+                  <div class="col-6">
+                    <p>Total Awards</p>
+                  </div>
+                  <div class="col-6">
+                    <figure>
+                      <img class="rounded" src="./src/assets/img/img-footer1.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="col-6">
+                    <figure>
+                      <img class="rounded" src="./src/assets/img/img-footer2.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="col-12">
+                    <small>We provide fast on-demand
+                      <span class="footer-fire">printing</span>
+                      <i class="bi bi-fire"></i></small>
                   </div>
                 </div>
-                <!-- <div class="col">
+              </div>
+              <div class="col text-end">
+                <span class="fs-4">My Account</span>
+                <ul>
+                  <li>Author</li>
+                  <li>How it Works</li>
+                  <li>Create Item</li>
+                  <li>Author Profile</li>
+                  <li>Terms and conditions</li>
+                  <li>Collection</li>
+                </ul>
+              </div>
+              <div class="col text-end">
+                <span class="fs-4">Marketplace</span>
+                <ul>
+                  <li>Collectibles</li>
+                  <li>Domain Names</li>
+                  <li>Photography</li>
+                  <li>Sports</li>
+                  <li>Trading Cards</li>
+                  <li>Utility</li>
+                </ul>
+              </div>
+              <div class="col text-end">
+                <span class="fs-4">About Us</span>
+                <ul>
+                  <li>The world’s first and largest digital</li>
+                  <li>marketplace for crypto collectibles and</li>
+                  <li>non-fungible tokens (NFTs). Buy</li>
+                  <li></li>
+                  <li>Lillian Blvd, Holbrook 254</li>
+                  <li>1-800-654-3210</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-5 wow animate__animated animate__fadeInLeft">
+            <div class="row container-fluid p-5 d-flex justify-content-center align-items-center">
+              <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center">
+                <div class="office-address-texto text-center">
+                  <small>Looking For Office</small>
+                  <h4 class="fs-4">Our Office Address</h4>
+                </div>
+              </div>
+              <!-- <div class="col">
                   <div class="separador separador-footer"></div>
                 </div> -->
-                <div class="col-12 col-md-12 col-lg-4">
-                  <div class="office-address-texto text-center">
-                    <small>Send Us Messege For Inquiry</small>
-                    <h4 class="fs-4">prinoxInfo@prinox.com</h4>
-                  </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <div class="office-address-texto text-center">
+                  <small>Send Us Messege For Inquiry</small>
+                  <h4 class="fs-4">prinoxInfo@prinox.com</h4>
                 </div>
-                <!-- <div class="col">
+              </div>
+              <!-- <div class="col">
                   <div class="separador separador-footer w-100"></div>
                 </div> -->
-                <div class="col-12 col-md-12 col-lg-4">
-                  <div class="office-address-texto text-center">
-                    <small>Printing Projects</small>
-                    <h4 class="fs-4">
-                      For Collaboration
-                      <i class="bi bi-circle-fill bi--estilo-circle"></i>
-                    </h4>
-                  </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <div class="office-address-texto text-center">
+                  <small>Printing Projects</small>
+                  <h4 class="fs-4">
+                    For Collaboration
+                    <i class="bi bi-circle-fill bi--estilo-circle"></i>
+                  </h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
-    <!-- script -->
-    <script
-      async
-      src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script type="importmap">
+      </div>
+    </footer>
+  </div>
+  <!-- script -->
+  <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
+    crossorigin="anonymous"></script>
+  <script type="importmap">
       {
         "imports": {
           "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js",
@@ -1079,155 +994,144 @@
         }
       }
     </script>
-    <script type="module">
-      import * as bootstrap from "bootstrap";
+  <script type="module">
+    import * as bootstrap from "bootstrap";
 
-      new bootstrap.Popover(document.getElementById("popoverButton"));
-    </script>
-    <script src="./src/core/js/WOW.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-    <script>
-      Vue.createApp({
-        data() {
-          return {
-            toggled: false,
-            products: [
-           
+    new bootstrap.Popover(document.getElementById("popoverButton"));
+  </script>
+  <script src="./src/core/js/WOW.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          toggled: false,
+          products: [
 
-            ],
-            cart: [],
-            total: 0,
 
-          }
-        },
-        methods: {
-          addToCart(item) {
-            this.cart.push(item);
-            this.getTotal();
-            Toastify({
-              text: "Producto Agregado",
-              duration: 3000,
-              newWindow: true,
-              close: true,
-              gravity: "top", // `top` or `bottom`
-              position: "left", // `left`, `center` or `right`
-              stopOnFocus: true, // Prevents dismissing of toast on hover
-              style: {
-                background: "linear-gradient(to top, #DED3CF, #DED3CF)",
-                color: '#000'
-              },
-              onClick: function () { } // Callback after click
-            }).showToast();
-
-          },
-          removeFromCart(index) {
-            this.cart.splice(index, 1);
-            this.getTotal();
-          },
-          getTotal() {
-            this.total = this.cart.reduce((a, b) => {
-              return a + b.price;
-            }, 0);
-            console.log(this.total)
-          },
-          async pay() {
-            fetch("https://pime-payments.herokuapp.com/checkout/order", {
-              method: 'POST',
-              headers: {
-                "Content-Type": "application/json",
-                api_key:
-                  "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
-                project_id: "6351286c9c501eba2960b070",
-              },
-              mode: "cors",
-
-              body: JSON.stringify({
-                sandbox: false,
-                vat: true,
-                items: this.cart,
-                /* 
-                items: [
-                        {
-                                title:'titulo del item',
-                                price: 1.00,
-                                qty:1
-                        }
-
-                ]
-                */
-
-              })
-            }).then(async res => {
-              this.loading = false
-              let data = await res.json();
-              console.log(data)
-              if (res.status === 200) {
-                window.location.href = data
-              } else {
-                alert('hubo un error')
-              }
-            })
-          }
-        },
-
-        async mounted() {
-          const btnCarrito = document.querySelector('#btnCarrito');
-          const btn_agregar = document.querySelectorAll('#btn_agregar');
-          const msj = document.querySelector('.msj-producto');
-          
-          const body = document.querySelector('body');
-          const loading = document.querySelector('.loading');
-          body.style.overflow = 'hidden';
-
-          function quit(body){
-            timeout = setTimeout(()=>{
-              body.style.overflow = 'visible';
-              loading.remove();
-            }, 4000);
-          }
-
-          quit(body);
-        
-          fetch(
-            `https://cms.api.apexcms.cloud/v1/api/schemas`,
-            {
-              headers: {
-                api_key:
-                  "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
-                project_id: "6351286c9c501eba2960b070",
-              },
-              methods: "POST",
-            }
-          ).then(async (res) => {
-            let data = await res.json();
-
-            this.products = data?.Agendas.entries.map(item=>{
-              let fields = item.fields
-              console.log(fields)
-              return {
-                title:fields.title.value,
-                description:fields.description.value,
-                price:parseFloat(fields.price.value),
-                downloadLink:fields.product.value,
-                thumb:fields.image.value,
-                qty:1,
-              }
-            })
-            console.log(this.products)
-
-            // btnCarrito.addEventListener('click', () => {
-            //   msj.style.top = '2rem';
-            //   setTimeout(function () {
-            //     msj.style.top = '-5rem';
-            //   }, 3000);
-            // });
-
-          });
+          ],
+          cart: [],
+          total: 0,
 
         }
-      }).mount("#app")
-    </script>
-  </body>
+      },
+      methods: {
+        addToCart(item) {
+          console.log('funcionando');
+          this.cart.push(item);
+          this.getTotal();
+          Toastify({
+            text: "Producto Agregado",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to top, #DED3CF, #DED3CF)",
+              color: '#000'
+            },
+            onClick: function () { } // Callback after click
+          }).showToast();
+
+        },
+        removeFromCart(index) {
+          this.cart.splice(index, 1);
+          this.getTotal();
+        },
+        getTotal() {
+          this.total = this.cart.reduce((a, b) => {
+            return a + b.price;
+          }, 0);
+          console.log(this.total)
+        },
+        async pay() {
+          fetch("https://pime-payments.herokuapp.com/checkout/order", {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+              api_key:
+                "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
+              project_id: "6351286c9c501eba2960b070",
+            },
+            mode: "cors",
+
+            body: JSON.stringify({
+              sandbox: false,
+              vat: true,
+              items: this.cart,
+              /* 
+              items: [
+                      {
+                              title:'titulo del item',
+                              price: 1.00,
+                              qty:1
+                      }
+
+              ]
+              */
+
+            })
+          }).then(async res => {
+            this.loading = false
+            let data = await res.json();
+            console.log(data)
+            if (res.status === 200) {
+              window.location.href = data
+            } else {
+              alert('hubo un error')
+            }
+          })
+        }
+      },
+
+      async mounted() {
+        const btnCarrito = document.querySelector('#btnCarrito');
+        const btn_agregar = document.querySelectorAll('#btn_agregar');
+        const msj = document.querySelector('.msj-producto');
+
+        fetch(
+          `https://cms.api.apexcms.cloud/v1/api/schemas`,
+          {
+            headers: {
+              api_key:
+                "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
+              project_id: "6351286c9c501eba2960b070",
+            },
+            methods: "POST",
+          }
+        ).then(async (res) => {
+          let data = await res.json();
+
+          this.products = data?.Agendas.entries.map(item => {
+            let fields = item.fields
+            console.log(fields)
+            return {
+              title: fields.title.value,
+              description: fields.description.value,
+              price: parseFloat(fields.price.value),
+              downloadLink: fields.product.value,
+              thumb: fields.image.value,
+              qty: 1,
+            }
+          })
+          console.log(this.products)
+
+          // btnCarrito.addEventListener('click', () => {
+          //   msj.style.top = '2rem';
+          //   setTimeout(function () {
+          //     msj.style.top = '-5rem';
+          //   }, 3000);
+          // });
+
+        });
+
+      }
+    }).mount("#app")
+  </script>
+</body>
+
 </html>

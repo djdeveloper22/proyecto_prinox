@@ -1,25 +1,73 @@
+.container-card {
+  .image {
+    margin-top: 1rem;
+    position: relative;
 
-.container-card{
-    .image{
-        position: relative;
-        margin-top: 1rem;
-        & > a{
-            position: absolute;
-            bottom: 0;
-            
-            left: 0;
-            padding: 0.5rem;
-            background-color: antiquewhite;
-            transition: all 0.6s ease;
-            
-        }
-
-        & > a:hover{
-            transition: all 1s ease;
-        }
+    &>a {
+      background-color: antiquewhite;
+      bottom: 0;
+      left: 0;
+      padding: 0.5rem;
+      position: absolute;
+      transition: all 0.6s ease;
     }
 
-   
-    
+    &>a:hover {
+      transition: all 1s ease;
+    }
+  }
 }
 
+.container__card {
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+.bg-image {
+  background-image: url('../img/card1.jpg');
+}
+
+.bg-image:nth-child(2) {
+  background-image: url('../img/card2.jpg');
+}
+
+.bg-image:nth-child(3) {
+  background-image: url('../img/card3.jpg');
+}
+
+.miCard {
+  background-color: #88691978;
+  color: #fff;
+  height: 26rem;
+  padding: 1rem 1rem;
+}
+
+.logo__card {
+  width: 70px;
+  height: 70px;
+}
+
+.container_card__btn>button {
+  background: #FFF;
+  border: none;
+  color: #C29B80;
+  margin-left: .4rem;
+}
+
+.container_card__btn>button:hover {
+  background: linear-gradient(352deg, #fff 0%, #F4E7DA 51%, #adabaa);
+  transition: all 10s ease;
+}
+
+.modal-producto {
+  color: #080808;
+}
+
+.imgLogoCard {
+  margin-bottom: .4rem;
+  width: 150px;
+}
