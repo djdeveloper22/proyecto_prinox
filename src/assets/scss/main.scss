@@ -11,14 +11,14 @@
 
 //header
 .cart-nav {
-  position: fixed;
+  background-color: #fff;
   height: 100%;
-  width: 400px;
+  position: fixed;
   right: -400px;
   top: 0;
-  background-color: #fff;
-  z-index: 3;
   transition: 0.2s;
+  width: 400px;
+  z-index: 3;
 }
 
 .cart-nav.toggled{
@@ -34,12 +34,12 @@
 }
 
 .estilo-p {
+  background-color: #ee1f28;
   clip-path: polygon(8% 0, 100% 0%, 91% 97%, 0% 100%);
   color: white;
-  background-color: #ee1f28;
-  width: 16rem;
   display: inline-block;
   text-align: center;
+  width: 16rem;
   &.estilo--p {
     background-color: #2dcca7 !important;
   }
@@ -73,9 +73,9 @@
 
 //contenedor info redes
 .container-redes {
-  writing-mode: vertical-rl;
   flex: 0;
   justify-content: space-around;
+  writing-mode: vertical-rl;
 }
 
 .container-redes .row {
@@ -91,19 +91,19 @@
 }
 
 .bi--informacion {
-  font-size: 40px;
   color: #fc6b5e;
+  font-size: 40px;
 }
 
 .container-bi-clipboard2-check {
   background-color: #fc6b5e;
   border-radius: 0.4rem;
-  width: 3rem;
-  height: 2.6rem;
-  display: grid;
-  place-content: center;
   color: #fff;
+  display: grid;
   font-size: 1.8rem;
+  height: 2.6rem;
+  place-content: center;
+  width: 3rem;
 }
 
 //-------------
@@ -112,11 +112,11 @@
 .poligon {
   background-color: #ee1f28;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 5rem;
   height: 5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 5rem;
 }
 
 .estilo-border {
@@ -140,9 +140,9 @@
   font-size: 3.8rem;
 
   &.bi--icon-play--header{
-    font-size: 3.8rem;
-    color: #fff;
     background-color: #ffffff00;
+    color: #fff;
+    font-size: 3.8rem;
   }
 
   &.bi--icon-play-2 {
@@ -151,8 +151,8 @@
   }
 
   &.bi--icon-play--address{
-    color:#000;
     background-color: rgba(0, 0, 0, 0);
+    color:#000;
   }
 
   &.bi--icon-play-2{
@@ -170,9 +170,9 @@
 }
 
 .efecto-reflejo::after {
+  color: #ccc;
   content: "Design. Printing. Quality";
   font-size: 5rem;
-  color: #ccc;
 }
 
 .estilo-quality {
@@ -181,19 +181,19 @@
 }
 //service
 .estilos-texto-service {
-  background-color: #fff;
-  width: 12rem;
-  height: 3.6rem;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 3.6rem;
+  justify-content: center;
   margin-top: 1rem;
+  width: 12rem;
 }
 
 .bg--hover {
   background-color: rgb(232, 226, 226);
-  transition: all 200ms ease-in;
   margin-left: 0.4rem;
+  transition: all 200ms ease-in;
 }
 
 
@@ -209,8 +209,13 @@
   place-content: center;
 }
 .figure--img {
-  width: 100%;
   max-width: 36rem;
+  width: 100%;
+}
+
+.figure__modal-logo{
+  padding: 1rem;
+  
 }
 
 //case-study
@@ -223,10 +228,10 @@
 }
 
 .grid { 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
   align-items: stretch;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .grid > figure img {
@@ -241,10 +246,10 @@
   background: gray;
   border: 0;
   color: white;
-  padding: 10px;
-  width: 100%;
-  position: absolute;
   left: 0;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
   
 }
 
@@ -260,16 +265,16 @@
 }
 
 .figura-testimonio{
-  width: 100%;
+  left: 0;
   max-width: 250px;
   position: absolute;
   top: -10rem;
-  left: 0;
+  width: 100%;
 }
 .figure__testimonio-img{
+  border-radius: 50%;
   max-width: 400px;
   width: 100%;
-  border-radius: 50%;
 }
 
 
@@ -292,11 +297,11 @@ footer {
   }
 }
 .input-footer {
-  width: 100%;
-  display: block;
-  height: 4rem;
   background-color: #1a1a1a;
   border: none !important;
+  display: block;
+  height: 4rem;
+  width: 100%;
 }
 
 .footer-fire {

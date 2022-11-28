@@ -2,8 +2,8 @@
 .bi--icon-compra {
     background-color: rgba(204, 204, 204, 0.551);
     border-radius: 50%;
-    padding: 0.8rem;
     color: #ff5f6d;
+    padding: 0.8rem;
   }
   
   .btn-warning {
@@ -27,4 +27,18 @@
     &.btn--footer {
       height: 4rem;
     }
+  }
+
+  .bg--btnCard{
+    background-color: #F9EAD7 !important;
+    color: black !important;
+  }
+
+  .btn-primary{
+    background: linear-gradient(
+      to right,
+      #ffc371,
+      #ff5f6d
+    ); 
+    border: none;
   }
