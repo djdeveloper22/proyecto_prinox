@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +15,11 @@
 </head>
 
 <body>
+  
   <div id="app">
+    <div class="msj-producto hide alert alert-primary">
+      Producto agregado
+    </div>
     <!-- seccion productos carrito -->
     <div class="cart-nav" id="contenedor__productos" :class="toggled == true ? 'toggled':'' ">
       <!--v-if-->
@@ -343,8 +346,8 @@
           <h2 class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp" style="color:#6F665D">
             Nuestros Productos
           </h2>
-          <div class="container__card" v-if="products.length > 0">
-            <div class="bg-image wow animate__animated animate__fadeInUp  rounded-4" v-for="product in products"
+          <div class="container__card">
+            <div class="bg-image wow animate__animated animate__fadeInUp  rounded-4" v-for="product in products.results"
               :key="product">
               <div class="miCard rounded-4 d-flex flex-column justify-content-around">
                 <div class="contenido__precios">
@@ -357,11 +360,11 @@
                 </div>
                 <div class="contenido__accion d-flex flex-column">
                   <img class="imgLogoCard" src="./src/assets/img/logo-prinox.svg" alt="">
-                  <span>{{product.seo}}</span>
-                  <span>{{product.lider}}</span>
+                  <!-- <span>{{product.title}}</span>
+                  <span>{{product.lider}}</span> -->
                   <div class="container_card__btn d-flex">
                     <button class="rounded-2 border-0 bg--btnCard" data-bs-toggle="modal"
-                      :data-bs-target="'#exampleModal_'+product.id">Ver producto</button>
+                      :data-bs-target="'#exampleModal_' + product.id">Ver producto</button>
                     <button class="border-0 rounded-2 bg--btnCard" @click="addToCart(product)">Agregar al
                       Carrito</button>
                   </div>
@@ -389,9 +392,12 @@
                             <div class="d-flex">
                               <small class="mb-2"
                                 :class="product.descuento !== ''? 'text-decoration-line-through':''">$119 -
-                              </small><span v-if="product.descuento !== ''">{{product.descuento}}</span>
+                              </small><span v-if="product.descuento !== ''">{{product.descuento}} - {{product.price.toLocaleString("en-us", {
+                                style: "currency",
+                                currency: "usd",
+                                })}}</span>
                             </div>
-                            <p>{{product.description}}</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eaque repellat animi voluptatem! Exercitationem reiciendis tenetur impedit magni illum omnis id magnam, maxime harum labore. Ut nam aspernatur illo pariatur!</p>
                             <button class="btn btn-primary" id="btnCarrito" href="#" @click="addToCart(product)">Add To
                               Cart</button>
                           </div>
@@ -403,8 +409,6 @@
                 </div>
                 <!-- modal -->
               </div>
-
-
             </div>
           </div>
         </div>
@@ -1004,133 +1008,165 @@
     new WOW().init();
   </script>
   <script>
-    Vue.createApp({
-      data() {
-        return {
-          toggled: false,
-          products: [
-
-
-          ],
-          cart: [],
-          total: 0,
-
-        }
-      },
-      methods: {
-        addToCart(item) {
-          console.log('funcionando');
-          this.cart.push(item);
-          this.getTotal();
-          Toastify({
-            text: "Producto Agregado",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "left", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-              background: "linear-gradient(to top, #DED3CF, #DED3CF)",
-              color: '#000'
+   Vue.createApp({
+        data() {
+          return {
+            content:{
+              header:{}
             },
-            onClick: function () { } // Callback after click
-          }).showToast();
-
+            products: [],
+            preview:{},
+            cart: [],
+            total: 0,
+            loading:false,
+            toggled: false
+          };
         },
-        removeFromCart(index) {
-          this.cart.splice(index, 1);
-          this.getTotal();
-        },
-        getTotal() {
-          this.total = this.cart.reduce((a, b) => {
-            return a + b.price;
-          }, 0);
-          console.log(this.total)
-        },
-        async pay() {
-          fetch("https://pime-payments.herokuapp.com/checkout/order", {
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json",
-              api_key:
-                "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
-              project_id: "6351286c9c501eba2960b070",
-            },
-            mode: "cors",
+        methods: {
+          addToCart(item) {
+            let product = {...item}
+            if(item.onSale === true){
+              product.price = product.onSalePrice
+            }
+            this.cart.push(product);
+            this.getTotal();
+            Toastify({
+              text: "Producto Agregado",
+              duration: 3000,
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "left", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to top, black, #DED3CF)",
+                color: '#000'
+              },
+              onClick: function () { } // Callback after click
+            }).showToast();
+          },
+          // addToCart(item) {
+          //   this.cart.push(item);
+          //   this.getTotal();
+          //   Toastify({
+          //     text: "Producto Agregado",
+          //     duration: 3000,
+          //     newWindow: true,
+          //     close: true,
+          //     gravity: "top", // `top` or `bottom`
+          //     position: "left", // `left`, `center` or `right`
+          //     stopOnFocus: true, // Prevents dismissing of toast on hover
+          //     style: {
+          //       background: "linear-gradient(to top, #DED3CF, #DED3CF)",
+          //       color: '#000'
+          //     },
+          //     onClick: function () { } // Callback after click
+          //   }).showToast();
+          // },
+          // removeFromCart(index) {
+          //   this.cart.splice(index, 1);
+          //   this.getTotal();
+          // },
+          getTotal() {
 
-            body: JSON.stringify({
-              sandbox: false,
-              vat: true,
-              items: this.cart,
-              /* 
-              items: [
-                      {
-                              title:'titulo del item',
-                              price: 1.00,
-                              qty:1
-                      }
+            this.total = this.cart.map(item=>{
+                if(item.bill_monthly === true){
+                    item.price = item.unit_price / item.monthly_fees
+                }
+                return item
+            }).reduce((a, b) => {
+              return a + b.price;
+            }, 0);
+          },
 
-              ]
-              */
-
+          async fetchText() {
+            fetch(
+              `https://cms.api.apexcms.cloud/v1/api/entry/_id/6331ada3bbcb322908a1f904`,
+              {
+                headers: {
+                  api_key:
+                    "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
+                  project_id: "6344dc1bc9bfad61b08901e5",
+                },
+                methods: "GET",
+              }
+            ).then(async (res) => {
+              let data = await res.json();
+              this.content.header = data;
+              return true
+            });
+          },
+          pay() {
+            let items = this.cart.map((item) => {
+              return {
+                title: item.title,
+                description: item.description?.text,
+                qty: 1,
+                price: item.price,
+              };
+            });
+            fetch("https://pime-payments.herokuapp.com/checkout/order", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                api_key:
+                  "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
+                project_id: "6344dc1bc9bfad61b08901e5",
+              },
+              body: JSON.stringify({
+                sandbox: true,
+                items: items,
+              }),
+              mode: "cors",
             })
-          }).then(async res => {
-            this.loading = false
-            let data = await res.json();
-            console.log(data)
-            if (res.status === 200) {
-              window.location.href = data
-            } else {
-              alert('hubo un error')
-            }
-          })
-        }
-      },
-
-      async mounted() {
-        const btnCarrito = document.querySelector('#btnCarrito');
-        const btn_agregar = document.querySelectorAll('#btn_agregar');
-        const msj = document.querySelector('.msj-producto');
-
-        fetch(
-          `https://cms.api.apexcms.cloud/v1/api/schemas`,
-          {
+              .then(async (res) => {
+                this.loading = false;
+      
+                let data = await res.json();
+                if (res.status == 200) {
+                  console.log(data);
+                  window.location.href = data;
+                } else {
+                  alert("hubo un error");
+                }
+              })
+              .catch((err) => {
+                this.loading = false;
+                console.log(err);
+      
+                alert("hubo un error");
+              });
+          },
+        },
+        async mounted() {
+          await this.fetchText();
+          // fetch products
+          let products = await fetch(`https://apex-ecomerce-api.herokuapp.com/v1/api/products/query`, {
             headers: {
               api_key:
-                "-ORj0il21-V-VFdRTbpawiQ_IUgNxpYsHpXXQ9GQzhWqy-5eK-7PozOePfmiYmbjVvC-VixiI4Sb-iPGC_NBPQ",
-              project_id: "6351286c9c501eba2960b070",
+                "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
+              project_id: "6344dc1bc9bfad61b08901e5",
+              "Content-Type": "application/JSON",
             },
-            methods: "POST",
-          }
-        ).then(async (res) => {
-          let data = await res.json();
+            method: "POST",
+            body: JSON.stringify({
+              query: {},
+              facet: {
+                results: [
+                  {
+                    $sort: {
+                      price: -1,
+                    },
+                  },
+                ],
+              },
+            }),
+          });
 
-          this.products = data?.Agendas.entries.map(item => {
-            let fields = item.fields
-            console.log(fields)
-            return {
-              title: fields.title.value,
-              description: fields.description.value,
-              price: parseFloat(fields.price.value),
-              downloadLink: fields.product.value,
-              thumb: fields.image.value,
-              qty: 1,
-            }
-          })
-          console.log(this.products)
-
-          // btnCarrito.addEventListener('click', () => {
-          //   msj.style.top = '2rem';
-          //   setTimeout(function () {
-          //     msj.style.top = '-5rem';
-          //   }, 3000);
-          // });
-
-        });
-
-      }
-    }).mount("#app")
+          this.products = await products.json();
+          console.log(this.products);
+        },
+      }).mount("#app");
   </script>
 </body>
 
