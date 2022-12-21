@@ -40,10 +40,18 @@
 }
 
 .miCard {
-  background-color: #88691978;
+  background-color: #ffe6e2;
   color: #fff;
-  height: 26rem;
+  height: 30rem;
   padding: 1rem 1rem;
+  color: #080808;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  
+  .container__imgProducto{
+    img{
+      border-radius: 0.3rem;
+    }
+  }
 }
 
 .logo__card {

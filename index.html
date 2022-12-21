@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,11 +12,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="./src/assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 
 <body>
-  
+
   <div id="app">
     <div class="msj-producto hide alert alert-primary">
       Producto agregado
@@ -83,48 +86,44 @@
               <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
             </figure>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 d-flex justify-content-around align-items-center">
               <li class="nav-item p-1">
-                <a class="nav-link active" aria-current="page" href="#">My Accounts</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="#servicios">Servicios</a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="#productos">Productos</a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link">Shop</a>
+                <a class="nav-link" href="#mision">Misión</a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link">Proyects</a>
+                <a class="nav-link" href="#testimonios">Testimonios</a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link">Services</a>
-              </li>
-              <li class="nav-item p-1">
-                <a class="nav-link">About</a>
-              </li>
-              <li class="nav-item p-1">
-                <a class="nav-link">Home</a>
+                <a class="nav-link" href="#preguntas">Preguntas</a>
               </li>
             </ul>
           </div>
-          <div class="header__btn">
-            <li class="spacing-carrito" id="carrito">
-              <a @click="toggled = true" style="cursor: pointer;"
-                class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
-                  class="bi bi-cart4"></i><span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                  id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
-              </a>
-            </li>
-            <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
+          <div class="containerBtn d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="header__btn flex-grow-1">
+              <li class="spacing-carrito" id="carrito">
+                <a @click="toggled = true" style="cursor: pointer;"
+                  class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
+                    class="bi bi-cart4"></i><span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
+                </a>
+              </li>
+              <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
+            </div>
           </div>
         </div>
       </nav>
@@ -232,7 +231,7 @@
           <div
             class="col-12 wow animate__animated animate__slideInLeft col-md-12 col-lg-6 text-end fondo-img-informacion">
             <span class="estilo-p mb-3">Abouts Printing Service</span>
-            <h1 class="estilo-title title--producer">
+            <h1 id="servicios" class="estilo-title title--producer">
               Produce Stuning Printing For Your Business
             </h1>
             <p class="title-parrafo parrafo--producer mt-3">
@@ -343,30 +342,35 @@
       <!-- prueba card -->
       <section class="p-3 container">
         <div class="row">
-          <h2 class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp" style="color:#6F665D">
+          <h2 id="productos" class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp" style="color:#6F665D">
             Nuestros Productos
           </h2>
           <div class="container__card">
             <div class="bg-image wow animate__animated animate__fadeInUp  rounded-4" v-for="product in products.results"
               :key="product">
               <div class="miCard rounded-4 d-flex flex-column justify-content-around">
-                <div class="contenido__precios">
-                  <small>SALE</small>
-                  <h4>{{product.title}}</h4>
-                  <small>{{product.price.toLocaleString("en-us", {
-                    style: "currency",
-                    currency: "usd",
-                    })}}</small>
+                <div class="container__imgProducto">
+                  <img :src="product?.thumbs?.[0]['1x']" alt="imagenes productos">
                 </div>
-                <div class="contenido__accion d-flex flex-column">
-                  <img class="imgLogoCard" src="./src/assets/img/logo-prinox.svg" alt="">
-                  <!-- <span>{{product.title}}</span>
-                  <span>{{product.lider}}</span> -->
-                  <div class="container_card__btn d-flex">
-                    <button class="rounded-2 border-0 bg--btnCard" data-bs-toggle="modal"
-                      :data-bs-target="'#exampleModal_' + product.id">Ver producto</button>
-                    <button class="border-0 rounded-2 bg--btnCard" @click="addToCart(product)">Agregar al
-                      Carrito</button>
+                <div class="container__info_card">
+                  <div class="contenido__precios">
+                    <small>SALE</small>
+                    <h4>{{product.title}}</h4>
+                    <small>{{product.price.toLocaleString("en-us", {
+                      style: "currency",
+                      currency: "usd",
+                      })}}</small>
+                  </div>
+                  <div class="contenido__accion d-flex flex-column">
+                    <img class="imgLogoCard" src="./src/assets/img/logo-prinox.svg" alt="">
+                    <!-- <span>{{product.title}}</span>
+                    <span>{{product.lider}}</span> -->
+                    <div class="container_card__btn d-flex">
+                      <button class="rounded-2 border-0 bg--btnCard" data-bs-toggle="modal"
+                        :data-bs-target="'#exampleModal_' + product.id">Ver producto</button>
+                      <button class="border-0 rounded-2 bg--btnCard" @click="addToCart(product)">Agregar al
+                        Carrito</button>
+                    </div>
                   </div>
                 </div>
                 <!-- Modal -->
@@ -383,7 +387,7 @@
                         <div class="row">
                           <div class="col-12 col-md-6 col-lg-6">
                             <figure class="figure__modal-logo">
-                              <img src="./src/assets/img/card2.jpg" alt="producto digital">
+                              <img :src="product?.thumbs?.[0]['1x']" alt="producto digital">
                             </figure>
                           </div>
                           <div class="col-12 col-md-6 col-lg-6 d-flex flex-column p-4 justify-content-between">
@@ -392,12 +396,15 @@
                             <div class="d-flex">
                               <small class="mb-2"
                                 :class="product.descuento !== ''? 'text-decoration-line-through':''">$119 -
-                              </small><span v-if="product.descuento !== ''">{{product.descuento}} - {{product.price.toLocaleString("en-us", {
+                              </small><span v-if="product.descuento !== ''">{{product.descuento}} -
+                                {{product.price.toLocaleString("en-us", {
                                 style: "currency",
                                 currency: "usd",
                                 })}}</span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eaque repellat animi voluptatem! Exercitationem reiciendis tenetur impedit magni illum omnis id magnam, maxime harum labore. Ut nam aspernatur illo pariatur!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eaque repellat animi
+                              voluptatem! Exercitationem reiciendis tenetur impedit magni illum omnis id magnam, maxime
+                              harum labore. Ut nam aspernatur illo pariatur!</p>
                             <button class="btn btn-primary" id="btnCarrito" href="#" @click="addToCart(product)">Add To
                               Cart</button>
                           </div>
@@ -486,7 +493,7 @@
         </div>
       </div>
       <div class="contenido-informacion pt-5">
-        <h2 class="wow animate__animated animate__fadeInRightBig text-center pt-5 fs-1">?How we do it</h2>
+        <h2 id="mision" class="wow animate__animated animate__fadeInRightBig text-center pt-5 fs-1">?How we do it</h2>
         <div class="row p-5 text-end wow animate__animated animate__fadeInUp">
           <div class="col-12 col-md-6 text-center col-lg-3">
             <i class="bi bi-send bi--informacion"></i>
@@ -732,7 +739,7 @@
         </figure>
         <div class="row text-end align-items-center">
           <div class="col-12 col-md-8 col-md-8 wow animate__animated animate__bounceInLeft">
-            <span class="fs-1">Testimonials</span>
+            <span id="testimonios" class="fs-1">Testimonials</span>
             <p>
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -754,7 +761,7 @@
         <div class="row pb-5 justify-content-center align-items-center">
           <div class="col-12 mb-md-5 col-lg-6 text-end fondo-img-informacion wow animate__animated animate__bounceInUp">
             <span class="estilo-p estilo--p mb-3">Frequently Ask Question</span>
-            <h1 class="estilo-title title--producer">
+            <h1 id="preguntas" class="estilo-title title--producer">
               Know stuning information For Your Business
             </h1>
             <p class="title-parrafo parrafo--producer mt-3">
@@ -882,7 +889,7 @@
                   </div>
                 </form>
               </div>
-              <div class="col-12 col-md-6 text-end wow animate__animated animate__fadeInRight">
+              <div class="col-12 col-md-6 text-center wow animate__animated animate__fadeInRight">
                 <span class="fs-1">We’d like to <span class="footer-talk-bg">Talk</span>
                 </span>
                 <p>See Everything About Your Users At One Place</p>
@@ -891,7 +898,7 @@
           </div>
           <div class="col-12 wow animate__animated animate__fadeInRight">
             <div class="row pt-5">
-              <div class="col">
+              <!-- <div class="col">
                 <span class="fs-4">Our Information</span>
                 <div class="row">
                   <div class="col-6">
@@ -916,8 +923,8 @@
                       <i class="bi bi-fire"></i></small>
                   </div>
                 </div>
-              </div>
-              <div class="col text-end">
+              </div> -->
+              <div class="col text-center">
                 <span class="fs-4">My Account</span>
                 <ul>
                   <li>Author</li>
@@ -928,7 +935,7 @@
                   <li>Collection</li>
                 </ul>
               </div>
-              <div class="col text-end">
+              <div class="col text-center">
                 <span class="fs-4">Marketplace</span>
                 <ul>
                   <li>Collectibles</li>
@@ -939,7 +946,7 @@
                   <li>Utility</li>
                 </ul>
               </div>
-              <div class="col text-end">
+              <div class="col text-center">
                 <span class="fs-4">About Us</span>
                 <ul>
                   <li>The world’s first and largest digital</li>
@@ -1008,165 +1015,166 @@
     new WOW().init();
   </script>
   <script>
-   Vue.createApp({
-        data() {
-          return {
-            content:{
-              header:{}
+    Vue.createApp({
+      data() {
+        return {
+          content: {
+            header: {}
+          },
+          products: [],
+          preview: {},
+          cart: [],
+          total: 0,
+          loading: false,
+          toggled: false
+        };
+      },
+      methods: {
+        addToCart(item) {
+          let product = { ...item }
+          if (item.onSale === true) {
+            product.price = product.onSalePrice
+          }
+          this.cart.push(product);
+          this.getTotal();
+          Toastify({
+            text: "Producto Agregado",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to top, #ffc371, #ff5f6d)",
+              color: '#000'
             },
-            products: [],
-            preview:{},
-            cart: [],
-            total: 0,
-            loading:false,
-            toggled: false
-          };
+            onClick: function () { } // Callback after click
+          }).showToast();
         },
-        methods: {
-          addToCart(item) {
-            let product = {...item}
-            if(item.onSale === true){
-              product.price = product.onSalePrice
+        // addToCart(item) {
+        //   this.cart.push(item);
+        //   this.getTotal();
+        //   Toastify({
+        //     text: "Producto Agregado",
+        //     duration: 3000,
+        //     newWindow: true,
+        //     close: true,
+        //     gravity: "top", // `top` or `bottom`
+        //     position: "left", // `left`, `center` or `right`
+        //     stopOnFocus: true, // Prevents dismissing of toast on hover
+        //     style: {
+        //       background: "linear-gradient(to top, #DED3CF, #DED3CF)",
+        //       color: '#000'
+        //     },
+        //     onClick: function () { } // Callback after click
+        //   }).showToast();
+        // },
+        // removeFromCart(index) {
+        //   this.cart.splice(index, 1);
+        //   this.getTotal();
+        // },
+        getTotal() {
+
+          this.total = this.cart.map(item => {
+            if (item.bill_monthly === true) {
+              item.price = item.unit_price / item.monthly_fees
             }
-            this.cart.push(product);
-            this.getTotal();
-            Toastify({
-              text: "Producto Agregado",
-              duration: 3000,
-              newWindow: true,
-              close: true,
-              gravity: "top", // `top` or `bottom`
-              position: "left", // `left`, `center` or `right`
-              stopOnFocus: true, // Prevents dismissing of toast on hover
-              style: {
-                background: "linear-gradient(to top, black, #DED3CF)",
-                color: '#000'
-              },
-              onClick: function () { } // Callback after click
-            }).showToast();
-          },
-          // addToCart(item) {
-          //   this.cart.push(item);
-          //   this.getTotal();
-          //   Toastify({
-          //     text: "Producto Agregado",
-          //     duration: 3000,
-          //     newWindow: true,
-          //     close: true,
-          //     gravity: "top", // `top` or `bottom`
-          //     position: "left", // `left`, `center` or `right`
-          //     stopOnFocus: true, // Prevents dismissing of toast on hover
-          //     style: {
-          //       background: "linear-gradient(to top, #DED3CF, #DED3CF)",
-          //       color: '#000'
-          //     },
-          //     onClick: function () { } // Callback after click
-          //   }).showToast();
-          // },
-          // removeFromCart(index) {
-          //   this.cart.splice(index, 1);
-          //   this.getTotal();
-          // },
-          getTotal() {
+            return item
+          }).reduce((a, b) => {
+            return a + b.price;
+          }, 0);
+        },
 
-            this.total = this.cart.map(item=>{
-                if(item.bill_monthly === true){
-                    item.price = item.unit_price / item.monthly_fees
-                }
-                return item
-            }).reduce((a, b) => {
-              return a + b.price;
-            }, 0);
-          },
-
-          async fetchText() {
-            fetch(
-              `https://cms.api.apexcms.cloud/v1/api/entry/_id/6331ada3bbcb322908a1f904`,
-              {
-                headers: {
-                  api_key:
-                    "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
-                  project_id: "6344dc1bc9bfad61b08901e5",
-                },
-                methods: "GET",
-              }
-            ).then(async (res) => {
-              let data = await res.json();
-              this.content.header = data;
-              return true
-            });
-          },
-          pay() {
-            let items = this.cart.map((item) => {
-              return {
-                title: item.title,
-                description: item.description?.text,
-                qty: 1,
-                price: item.price,
-              };
-            });
-            fetch("https://pime-payments.herokuapp.com/checkout/order", {
-              method: "POST",
+        async fetchText() {
+          fetch(
+            `https://cms.api.apexcms.cloud/v1/api/entry/_id/6331ada3bbcb322908a1f904`,
+            {
               headers: {
-                "Content-Type": "application/json",
                 api_key:
                   "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
                 project_id: "6344dc1bc9bfad61b08901e5",
               },
-              body: JSON.stringify({
-                sandbox: true,
-                items: items,
-              }),
-              mode: "cors",
-            })
-              .then(async (res) => {
-                this.loading = false;
-      
-                let data = await res.json();
-                if (res.status == 200) {
-                  console.log(data);
-                  window.location.href = data;
-                } else {
-                  alert("hubo un error");
-                }
-              })
-              .catch((err) => {
-                this.loading = false;
-                console.log(err);
-      
-                alert("hubo un error");
-              });
-          },
+              methods: "GET",
+            }
+          ).then(async (res) => {
+            let data = await res.json();
+            this.content.header = data;
+            return true
+          });
         },
-        async mounted() {
-          await this.fetchText();
-          // fetch products
-          let products = await fetch(`https://apex-ecomerce-api.herokuapp.com/v1/api/products/query`, {
+        pay() {
+          let items = this.cart.map((item) => {
+            return {
+              title: item.title,
+              description: item.description?.text,
+              qty: 1,
+              price: item.price,
+            };
+          });
+          fetch("https://pime-payments.herokuapp.com/checkout/order", {
+            method: "POST",
             headers: {
+              "Content-Type": "application/json",
               api_key:
                 "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
               project_id: "6344dc1bc9bfad61b08901e5",
-              "Content-Type": "application/JSON",
             },
-            method: "POST",
             body: JSON.stringify({
-              query: {},
-              facet: {
-                results: [
-                  {
-                    $sort: {
-                      price: -1,
-                    },
-                  },
-                ],
-              },
+              sandbox: true,
+              items: items,
             }),
-          });
+            mode: "cors",
+          })
+            .then(async (res) => {
+              this.loading = false;
 
-          this.products = await products.json();
-          console.log(this.products);
+              let data = await res.json();
+              if (res.status == 200) {
+                console.log(data);
+                window.location.href = data;
+              } else {
+                alert("hubo un error");
+              }
+            })
+            .catch((err) => {
+              this.loading = false;
+              console.log(err);
+
+              alert("hubo un error");
+            });
         },
-      }).mount("#app");
+      },
+      async mounted() {
+        await this.fetchText();
+        // fetch products
+        let products = await fetch(`https://apex-ecomerce-api.herokuapp.com/v1/api/products/query`, {
+          headers: {
+            api_key:
+              "gCD9J0Lhs-F4Ayefvp12sliX5RGVeOQZq_OpyrI_W8KlF5NOVQG4fKGxtX4-svF0EuZYcR-r13z3VBEbFYhhiA",
+            project_id: "6344dc1bc9bfad61b08901e5",
+            "Content-Type": "application/JSON",
+          },
+          method: "POST",
+          body: JSON.stringify({
+            query: {},
+            facet: {
+              results: [
+                {
+                  $sort: {
+                    price: -1,
+                  },
+                },
+              ],
+            },
+          }),
+        });
+
+        this.products = await products.json();
+        console.log(this.products);
+        //console.log(this.products.results[0].thumbs);
+      },
+    }).mount("#app");
   </script>
 </body>
 

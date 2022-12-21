@@ -1,7 +1,6 @@
 @media (max-width: 1024px) {
   .container-redes,
   .container-visitas,
-  .header__btn,
   .container-office-address,
   .figura-testimonio {
     display: none; } }

@@ -2,7 +2,7 @@
 @media (max-width: 1024px) {
   .container-redes,
   .container-visitas,
-  .header__btn,
+  //.header__btn,
   .container-office-address,
   .figura-testimonio {
     display: none;
@@ -14,6 +14,8 @@
   .estilo-title {
     font-size: 3rem !important;
   }
+  
+  
 }
 @media (max-width: 768px) {
   .estilo-title {
