@@ -81,12 +81,13 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid wow animate__animated animate__fadeIn">
+
           <a class="navbar-brand" href="#">
             <figure class="container__logo">
               <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
             </figure>
           </a>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse order-3" id="navbarNav">
             <ul class="navbar-nav w-100 d-flex justify-content-around align-items-center">
               <li class="nav-item p-1">
                 <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
@@ -122,7 +123,6 @@
                     id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
                 </a>
               </li>
-              <!-- <i class="bi bi-bag bi--icon-compra"></i> -->
             </div>
           </div>
         </div>
@@ -342,9 +342,11 @@
       <!-- prueba card -->
       <section class="p-3 container">
         <div class="row">
-          <h2 id="productos" class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp" style="color:#6F665D">
+          <h2 id="productos" class="display-4 text-center mt-5 pb-3 wow animate__animated animate__fadeInUp"
+            style="color:#6F665D">
             Nuestros Productos
           </h2>
+
           <div class="container__card">
             <div class="bg-image wow animate__animated animate__fadeInUp  rounded-4" v-for="product in products.results"
               :key="product">
@@ -364,7 +366,7 @@
                   <div class="contenido__accion d-flex flex-column">
                     <img class="imgLogoCard" src="./src/assets/img/logo-prinox.svg" alt="">
                     <!-- <span>{{product.title}}</span>
-                    <span>{{product.lider}}</span> -->
+                      <span>{{product.lider}}</span> -->
                     <div class="container_card__btn d-flex">
                       <button class="rounded-2 border-0 bg--btnCard" data-bs-toggle="modal"
                         :data-bs-target="'#exampleModal_' + product.id">Ver producto</button>
@@ -418,6 +420,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </section>
       <!-- \fin -->
