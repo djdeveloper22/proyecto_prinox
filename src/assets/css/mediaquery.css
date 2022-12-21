@@ -13,7 +13,10 @@
   .estilo-title {
     font-size: 2.6rem !important; }
   .miCard {
-    width: 20rem; } }
+    width: 20rem; }
+  .nav-link {
+    width: auto;
+    padding: 0.2rem; } }
 
 @media (max-width: 425px) {
   .estilo-title {

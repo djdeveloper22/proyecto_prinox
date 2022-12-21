@@ -26,13 +26,13 @@
   width: 18rem; }
 
 .miCard {
-  background-color: #f2ebeb;
+  background-color: #F8F3FF;
   color: #fff;
   height: 30rem;
   width: 19rem;
   padding: 1rem 1rem;
   color: #080808;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
+  box-shadow: #26394d 0px 20px 30px -10px; }
   .miCard .container__imgProducto img {
     border-radius: 0.3rem; }
 
@@ -263,7 +263,10 @@ h4 {
   .estilo-title {
     font-size: 2.6rem !important; }
   .miCard {
-    width: 20rem; } }
+    width: 20rem; }
+  .nav-link {
+    width: auto;
+    padding: 0.2rem; } }
 
 @media (max-width: 425px) {
   .estilo-title {

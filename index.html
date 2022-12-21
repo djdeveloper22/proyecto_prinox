@@ -73,7 +73,7 @@
                 })}}</h3>
             </div>
           </div>
-          <button class="btn btn-warning my-3 py-2" @click="pay()"> Ir a checkout</button>
+          <button class="btn btn-warning my-3 py-2 w-100" @click="pay()"> Ir a checkout</button>
         </div>
       </div>
     </div>
@@ -81,13 +81,28 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid wow animate__animated animate__fadeIn">
-
           <a class="navbar-brand" href="#">
             <figure class="container__logo">
               <img src="./src/assets/img/logo-prinox.svg" alt="logo prinox" />
             </figure>
           </a>
-          <div class="collapse navbar-collapse order-3" id="navbarNav">
+          <div class="containerBtn d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="header__btn">
+              <li class="spacing-carrito" id="carrito">
+                <a @click="toggled = true" style="cursor: pointer;"
+                  class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
+                    class="bi bi-cart4"></i><span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
+                </a>
+              </li>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 d-flex justify-content-around align-items-center">
               <li class="nav-item p-1">
                 <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
@@ -109,22 +124,8 @@
               </li>
             </ul>
           </div>
-          <div class="containerBtn d-flex">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="header__btn flex-grow-1">
-              <li class="spacing-carrito" id="carrito">
-                <a @click="toggled = true" style="cursor: pointer;"
-                  class="nav-link fw-bold position-relative btn btn-warning btn--contact spacin-carrito p-1"> To car <i
-                    class="bi bi-cart4"></i><span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    id="contadorCart">{{cart.length}}<span class="visually-hidden">unread messages</span></span>
-                </a>
-              </li>
-            </div>
-          </div>
+
+
         </div>
       </nav>
     </header>
