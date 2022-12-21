@@ -19,31 +19,32 @@
 }
 
 .container__card {
-  --auto-grid-min-size: 16rem;
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   margin: 0 auto;
   max-width: 1050px;
+  place-content: center;
 }
 
 .bg-image {
-  background-image: url('../img/card1.jpg');
-}
-
-.bg-image:nth-child(2) {
-  background-image: url('../img/card2.jpg');
-}
-
-.bg-image:nth-child(3) {
-  background-image: url('../img/card3.jpg');
+  width: 18rem;
 }
 
 .miCard {
-  background-color: #88691978;
+  background-color: #f2ebeb;
   color: #fff;
-  height: 26rem;
+  height: 30rem;
+  width: 19rem;
   padding: 1rem 1rem;
+  color: #080808;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  .container__imgProducto{
+    img{
+      border-radius: 0.3rem;
+    }
+  }
 }
 
 .logo__card {

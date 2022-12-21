@@ -14,27 +14,27 @@
     transition: all 1s ease; }
 
 .container__card {
-  --auto-grid-min-size: 16rem;
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   margin: 0 auto;
-  max-width: 1050px; }
+  max-width: 1050px;
+  place-content: center; }
 
 .bg-image {
-  background-image: url("../img/card1.jpg"); }
-
-.bg-image:nth-child(2) {
-  background-image: url("../img/card2.jpg"); }
-
-.bg-image:nth-child(3) {
-  background-image: url("../img/card3.jpg"); }
+  width: 18rem; }
 
 .miCard {
-  background-color: #88691978;
+  background-color: #f2ebeb;
   color: #fff;
-  height: 26rem;
-  padding: 1rem 1rem; }
+  height: 30rem;
+  width: 19rem;
+  padding: 1rem 1rem;
+  color: #080808;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
+  .miCard .container__imgProducto img {
+    border-radius: 0.3rem; }
 
 .logo__card {
   width: 70px;
@@ -195,8 +195,8 @@ h4 {
     height: 4rem; }
 
 .bg--btnCard {
-  background-color: #F9EAD7 !important;
-  color: black !important; }
+  background-color: #ffffff !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
 
 .btn-primary {
   background: linear-gradient(to right, #ffc371, #ff5f6d);
@@ -251,7 +251,6 @@ h4 {
 @media (max-width: 1024px) {
   .container-redes,
   .container-visitas,
-  .header__btn,
   .container-office-address,
   .figura-testimonio {
     display: none; } }
@@ -262,7 +261,9 @@ h4 {
 
 @media (max-width: 768px) {
   .estilo-title {
-    font-size: 2.6rem !important; } }
+    font-size: 2.6rem !important; }
+  .miCard {
+    width: 20rem; } }
 
 @media (max-width: 425px) {
   .estilo-title {
